@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>같이 수어</title>
+    <!-- Font Awesome 아이콘 라이브러리 추가 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+    <div style="display: flex; align-items: center;">
+        <!-- 집 아이콘과 함께 이전 페이지로 이동하는 버튼 추가 -->
+        <button onclick="goBack()" style="font-size:24px; margin-right: 20px;"><i class="fas fa-home"></i></button>
+        <h1 style="display: inline;">텍스트를 수어로</h1>
+    </div>
+    
+    <label for="textInput">텍스트를 입력하세요.</label><br>
+    <input type="text" id="textInput" placeholder="여기에 입력하세요">
+    <button onclick="playVideo()">확인</button>
+    <video id="videoPlayer" width="320" height="240" style="display: none;" muted>
+        <source id="videoSource" src="" type="video/mp4">
+        브라우저가 비디오를 지원하지 않습니다.
+    </video>
+
+    <script>
+        function playVideo() {
+            var textInput = document.getElementById('textInput');
+            var videoPlayer = document.getElementById('videoPlayer');
+            var videoSource = document.getElementById('videoSource');
+
+            videoSource.src = textInput.value + '.mp4'; // 예시로, 서버에 있는 파일을 참조
+            videoPlayer.load();
+
+            videoPlayer.onerror = function() {
+                alert("동영상이 없습니다.");
+                videoPlayer.style.display = 'none'; // 동영상이 없을 때 창 숨기기
+            };
+
+            videoPlayer.onloadeddata = function() {
+                videoPlayer.style.display = 'block'; // 동영상 창 보이기
+                videoPlayer.play();
+                textInput.value = ''; // 동영상 재생 시작 후 텍스트 입력칸 비우기
+            };
+
+            videoPlayer.onended = function() {
+                videoPlayer.style.display = 'none'; // 동영상 재생 종료 후 창 숨기기
+            };
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
