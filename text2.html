@@ -2,21 +2,64 @@
 <html>
 <head>
     <title>같이 수어</title>
-    <!-- Font Awesome 아이콘 라이브러리 추가 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
     <div style="display: flex; align-items: center;">
-        <!-- 집 아이콘과 함께 이전 페이지로 이동하는 버튼 추가 -->
         <button onclick="goBack()" style="font-size:24px; margin-right: 20px;"><i class="fas fa-home"></i></button>
         <h1 style="display: inline;">음성을 수어로</h1>
+        <button onclick="startSpeechRecognition()" style="font-size:24px; margin-left: 20px;"><i class="fas fa-microphone"></i></button>
     </div>
 
-    <!-- 페이지의 추가 내용은 여기에 들어갑니다. 예를 들어, 음성 입력 기능, 수어 변환 기능 등을 포함할 수 있습니다. -->
+    <!-- Display the Recognized Text -->
+    <p id="recognizedText"></p>
+
+    <!-- Video Player -->
+    <video id="signLanguageVideo" width="320" height="240" style="display: none;" muted>
+        <source id="videoSource" src="" type="video/mp4">
+        브라우저가 비디오를 지원하지 않습니다.
+    </video>
 
     <script>
         function goBack() {
             window.history.back();
+        }
+
+        function startSpeechRecognition() {
+            var recognition = new webkitSpeechRecognition();
+            recognition.lang = 'ko-KR';
+            recognition.onresult = function(event) {
+                var text = event.results[0][0].transcript;
+                document.getElementById('recognizedText').innerText = text;
+                // Delay playing the video by 2 seconds
+                setTimeout(function() {
+                    playVideoBasedOnText(text);
+                }, 2000);
+            };
+            recognition.start();
+        }
+
+        function playVideoBasedOnText(text) {
+            var videoPlayer = document.getElementById('signLanguageVideo');
+            var videoSource = document.getElementById('videoSource');
+
+            videoSource.src = text + '.mp4'; // Ensure this path is correct
+            videoPlayer.load();
+
+            videoPlayer.onerror = function() {
+                alert('동영상이 없습니다.');
+                videoPlayer.style.display = 'none';
+            };
+
+            videoPlayer.onloadeddata = function() {
+                videoPlayer.style.display = 'block';
+                videoPlayer.play();
+                document.getElementById('recognizedText').innerText = ''; // Clear text after video starts
+            };
+
+            videoPlayer.onended = function() {
+                videoPlayer.style.display = 'none'; // Hide the video player after the video ends
+            };
         }
     </script>
 </body>
