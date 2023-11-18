@@ -1,39 +1,51 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>같이 수어</title>
-        <style>
-            /* Centering the content */
-            body,
-            html {
-                height: 100%;
-                margin: 0;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                font-family: Arial, sans-serif;
-            }
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Example</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            line-height: 1.2; /* Adjust the line height to your preference */
+        }
 
-            h1 {
-                margin-bottom: 20px; /* Add some space below the heading */
-            }
+        h1, p, #goToIndexButton {
+            text-align: center;
+            margin-bottom: 10px; /* Adjust the bottom margin of each element */
+        }
 
-            button {
-                margin: 10px 0; /* Vertical space between buttons */
-                width: 200px; /* Set a specific width for all buttons */
-            }
-        </style>
-    </head>
-    <body>
-        <h1>같이 수어</h1>
-        <button onclick="location.href='text.html'">텍스트를 수어로</button
-        ><br /><br />
-        <button onclick="location.href='text2.html'">음성을 수어로</button
-        ><br /><br />
-        <!-- 수정된 부분: 페이지 이동 링크를 netlify 사이트로 변경 -->
-        <button onclick="location.href='action.html'">
-            수어 동작을 텍스트로
-        </button>
-    </body>
+        h1 {
+            margin-top: 20px; /* Adjust the top margin of the h1 element to move it up */
+        }
+
+        #goToIndexButton {
+            margin-top: 20px; /* Adjust the top margin of the button to move it down */
+            font-size: 18px; /* Adjust the font size to your preference */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>우리들의 가치 있는 소통, 같이 수화</h1><p></p>
+
+    <!-- '같이 수화' 프로젝트 소개 멘트 -->
+    <p>하나의 언어로, 하나의 마음으로 소통하는 세상을 '같이 수화'는 꿈꿉니다.</p>
+    '같이 수화'와 함께 대화의 폭을 넓혀보세요.<p></p>
+
+    <!-- 사용해보기 버튼 -->
+    <button id="goToIndexButton">사용해보기</button>
+
+    <script>
+        document.getElementById('goToIndexButton').addEventListener('click', function() {
+            window.location.href = 'start.html';
+        });
+    </script>
+
+</body>
 </html>
