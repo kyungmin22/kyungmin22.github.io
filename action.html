@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html>
-    
-<div>수어 동작을 인식시켜 보세요.</div>
+<div>Teachable Machine Pose Model</div>
 <button type="button" onclick="init()">Start</button>
 <div><canvas id="canvas"></canvas></div>
 <div id="label-container"></div>
@@ -71,16 +68,10 @@
                 }
             }
 
-            // Display only the word with the highest probability
-            const classPrediction =
-                prediction[maxIndex].className +
-                ": " +
-                (maxProbability * 100).toFixed(2) + "%";
+            // Display only the class name with no percentage
+            const classPrediction = prediction[maxIndex].className;
             labelContainer.innerHTML = classPrediction;
 
         }, 3000); // 3 seconds timeout
     }
 </script>
-
-</html>
-
