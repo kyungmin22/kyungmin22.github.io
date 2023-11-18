@@ -6,85 +6,81 @@
     <title>Teachable Machine Pose Model</title>
 </head>
 <body>
-    <div>수어 동작을 인식시켜 보세요.</div>
-    <button type="button" onclick="init()">사용하기</button>
+    <div>Teachable Machine Pose Model</div>
+    <button type="button" onclick="init()">Start</button>
     <div><canvas id="canvas"></canvas></div>
     <div id="label-container"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
     <script type="text/javascript">
-        // More API functions here:
-        // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
-
-        // the link to your model provided by Teachable Machine export panel
         const URL = "./my_model/";
-        let model, webcam, ctx, labelContainer, maxPredictions, recognitionTimeout;
+        let model, webcam, ctx, labelContainer, maxPredictions;
 
         async function init() {
             const modelURL = URL + "model.json";
             const metadataURL = URL + "metadata.json";
 
-            // load the model and metadata
-            // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
-            // Note: the pose library adds a tmPose object to your window (window.tmPose)
             model = await tmPose.load(modelURL, metadataURL);
             maxPredictions = model.getTotalClasses();
 
-            // Convenience function to setup a webcam
             const size = 200;
-            const flip = true; // whether to flip the webcam
-            webcam = new tmPose.Webcam(size, size, flip); // width, height, flip
-
-            // wait for the webcam to be fully set up
-            await webcam.setup(); // request access to the webcam
+            const flip = true;
+            webcam = new tmPose.Webcam(size, size, flip);
+            await webcam.setup();
             await webcam.play();
+            window.requestAnimationFrame(loop);
 
-            // append/get elements to the DOM
             const canvas = document.getElementById("canvas");
             canvas.width = size;
             canvas.height = size;
             ctx = canvas.getContext("2d");
             labelContainer = document.getElementById("label-container");
-
-            // start the animation loop only after the webcam is ready
-            window.requestAnimationFrame(loop);
+            for (let i = 0; i < maxPredictions; i++) {
+                labelContainer.appendChild(document.createElement("div"));
+            }
         }
 
         async function loop(timestamp) {
-            webcam.update(); // update the webcam frame
+            webcam.update();
             await predict();
             window.requestAnimationFrame(loop);
         }
 
         async function predict() {
-            // Prediction #1: run input through posenet
-            // estimatePose can take in an image, video, or canvas html element
             const { pose, posenetOutput } = await model.estimatePose(webcam.canvas);
-            // Prediction 2: run input through teachable machine classification model
             const prediction = await model.predict(posenetOutput);
 
-            // Clear the previous timeout if it exists
-            clearTimeout(recognitionTimeout);
-
-            // Set a new timeout to display the highest probability after 3 seconds
-            recognitionTimeout = setTimeout(() => {
-                let maxProbability = 0;
-                let maxIndex = 0;
-
-                // Find the index of the highest probability
-                for (let i = 0; i < maxPredictions; i++) {
-                    const probability = prediction[i].probability;
-                    if (probability > maxProbability) {
-                        maxProbability = probability;
-                        maxIndex = i;
-                    }
+            // Find the index with the highest probability
+            let maxIndex = 0;
+            for (let i = 1; i < maxPredictions; i++) {
+                if (prediction[i].probability > prediction[maxIndex].probability) {
+                    maxIndex = i;
                 }
+            }
 
-                // Display only the class name with no percentage
-                const classPrediction = prediction[maxIndex].className;
-                labelContainer.innerHTML = classPrediction;
+            // Display the class label with the highest probability
+            const classPrediction =
+                prediction[maxIndex].className +
+                ": " +
+                (prediction[maxIndex].probability * 100).toFixed(2) + "%";
 
-            }, 3000); // 3 seconds timeout
+            // Display the result on the label container
+            labelContainer.innerHTML = classPrediction;
+
+            // Draw the poses
+            drawPose(pose);
+        }
+
+        function drawPose(pose) {
+            if (webcam.canvas) {
+                ctx.drawImage(webcam.canvas, 0, 0);
+                if (pose) {
+                    const minPartConfidence = 0.5;
+                    tmPose.drawKeypoints(pose.keypoints, minPartConfidence, ctx);
+                    tmPose.drawSkeleton(pose.keypoints, minPartConfidence, ctx);
+                }
+            }
         }
     </script>
 </body>
