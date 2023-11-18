@@ -30,8 +30,8 @@
         <!-- Video Player -->
         <video
             id="signLanguageVideo"
-            width="320"
-            height="240"
+            width="480"
+            height="360"
             style="display: none"
             muted
         >
@@ -62,7 +62,8 @@
                 var videoPlayer = document.getElementById("signLanguageVideo");
                 var videoSource = document.getElementById("videoSource");
 
-                videoSource.src = text + ".mp4"; // Ensure this path is correct
+                // Update the video source path to point to the "수어 영상" folder
+                videoSource.src = "수어 영상/" + text + ".mp4"; // Assuming the "수어 영상" folder is in the root directory
                 videoPlayer.load();
 
                 videoPlayer.onerror = function () {
