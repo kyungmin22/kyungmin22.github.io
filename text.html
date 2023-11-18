@@ -18,7 +18,102 @@
     <video id="videoPlayer" width="320" height="240" style="display: none;" muted>
         <source id="videoSource" src="" type="video/mp4">
         브라우저가 비디오를 지원하지 않습니다.
-    </video>
+    </video><!DOCTYPE html>
+    <html>
+    <head>
+        <title>같이 수어</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        <style>
+            #inputContainer {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="display: flex; align-items: center;">
+            <button onclick="goBack()" style="font-size:24px; margin-right: 20px;"><i class="fas fa-home"></i></button>
+            <h1 style="display: inline;">텍스트를 수어로</h1>
+        </div>
+    
+        <div id="inputContainer">
+            <label for="textInput">텍스트를 입력하세요:</label>
+            <input type="text" id="textInput" placeholder="여기에 입력하세요" oninput="showSuggestions(this.value)">
+            <button onclick="playVideo()">확인</button>
+        </div>
+        <div id="suggestions" style="border: 1px solid #ddd; display: none;"></div>
+        
+        <video id="videoPlayer" width="320" height="240" style="display: none;" muted>
+            <source id="videoSource" src="" type="video/mp4">
+            브라우저가 비디오를 지원하지 않습니다.
+        </video>
+    
+        <script>
+            var videoNames = ["안녕하세요", "안녕", "감사합니다", "고마워", "고마워요", "고맙습니다", "기뻐", "기뻐요", "기쁩니다", "더워", 
+            "더워요", "덥다", "덥습니다", "만나서 반가워", "만나서 반갑다", "만나서 반갑습니다", "미안", "미안하다", "미안합니다", "미안해", 
+            "미안해요", "베가 고픕니다", "배고파", "배고파요", "배고프다", "사랑합니다", "사랑해", "사랑해요", "슬퍼", "슬퍼요", "슬프다",
+            "슬픕니다", "싫다", "싫습니다", "싫어", "싫어요", "예뻐", "예뻐요", "예쁩니다", "예쁘다", "잠와", "졸려", "졸리다", "졸립니다", 
+            "좋다", "좋습니다", "좋아", "좋아요", "주세요", "주십시오", "줘", "추워", "춥다", "춥습니다", "추워요", "하이", 
+            "example1", "example2", "example3" , "example4", "example5", "example6", "example7", "example8", "example9", "example10", 
+            "example11", "example12", "example13", "example14", "example15", "example16", "example17", "example18", "example19", "example20", 
+            "example21", "example22", "example23", "example24", "example25", "example26", "example27", "example28", "example29", "example30", 
+            "example31", "example32", "example33", "example34", "example35", "example36", "example37", "example38", "example39", "example40", 
+            "example41", "example42", "example43", "example44", "example45", "example46", "example47", "example48", "example49", "example50", 
+            "example51", "example52", "example53", "example54", "example55", "example56", "example57", "example58"]
+            function showSuggestions(value) {
+                var suggestions = document.getElementById("suggestions");
+                suggestions.innerHTML = '';
+                if (!value) {
+                    suggestions.style.display = 'none';
+                    return;
+                }
+                var filtered = videoNames.filter(function(name) {
+                    return name.toLowerCase().startsWith(value.toLowerCase());
+                });
+                filtered.forEach(function(suggested) {
+                    var div = document.createElement("div");
+                    div.innerHTML = suggested;
+                    div.onclick = function() {
+                        document.getElementById("textInput").value = suggested;
+                        suggestions.style.display = 'none';
+                    };
+                    suggestions.appendChild(div);
+                });
+                suggestions.style.display = 'block';
+            }
+    
+            function playVideo() {
+                var textInput = document.getElementById('textInput');
+                var videoPlayer = document.getElementById('videoPlayer');
+                var videoSource = document.getElementById('videoSource');
+    
+                videoSource.src = textInput.value + '.mp4'; // 예시로, 서버에 있는 파일을 참조
+                videoPlayer.load();
+    
+                videoPlayer.onerror = function() {
+                    alert("동영상이 없습니다.");
+                    videoPlayer.style.display = 'none';
+                };
+    
+                videoPlayer.onloadeddata = function() {
+                    videoPlayer.style.display = 'block';
+                    videoPlayer.play();
+                    textInput.value = '';
+                };
+    
+                videoPlayer.onended = function() {
+                    videoPlayer.style.display = 'none';
+                };
+            }
+    
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </body>
+    </html>
+    
 
     <script>
         function playVideo() {
