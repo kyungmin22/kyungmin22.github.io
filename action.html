@@ -3,11 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>수어 동작을 인식시켜 보세요.</title><P></P>
+    <title>수어 동작을 인식시켜 보세요.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .header button {
+            font-size: 24px;
+            margin-right: 20px;
+        }
+
+        canvas {
+            border: 1px solid black;
+            margin-top: 20px;
+        }
+
+        #label-container {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <div>수어 동작을 인식시켜 보세요.<p></p></div>
-    <button type="button" onclick="init()">인식하기</button><p></p>
+    <div class="header">
+        <button onclick="goBack()">
+            <i class="fas fa-home"></i>
+        </button>
+        <h1>수어 동작을 인식시켜 보세요.</h1>
+    </div>
+
+    <button type="button" onclick="init()">인식하기</button>
     <div><canvas id="canvas"></canvas></div>
     <div id="label-container"></div>
 
@@ -51,7 +90,6 @@
             const { pose, posenetOutput } = await model.estimatePose(webcam.canvas);
             const prediction = await model.predict(posenetOutput);
 
-            // Find the index with the highest probability
             let maxIndex = 0;
             for (let i = 1; i < maxPredictions; i++) {
                 if (prediction[i].probability > prediction[maxIndex].probability) {
@@ -59,14 +97,9 @@
                 }
             }
 
-            // Display the class label with the highest probability
-            const classPrediction =
-                prediction[maxIndex].className;
-
-            // Display the result on the label container
+            const classPrediction = prediction[maxIndex].className;
             labelContainer.innerHTML = classPrediction;
 
-            // Draw the poses
             drawPose(pose);
         }
 
@@ -79,6 +112,10 @@
                     tmPose.drawSkeleton(pose.keypoints, minPartConfidence, ctx);
                 }
             }
+        }
+
+        function goBack() {
+            window.history.back();
         }
     </script>
 </body>
