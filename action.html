@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teachable Machine Pose Model</title>
+    <title>수어 동작을 인식시켜 보세요.</title>
 </head>
 <body>
-    <div>Teachable Machine Pose Model</div>
-    <button type="button" onclick="init()">Start</button>
+    <div>수어 동작을 인식시켜 보세요.</div>
+    <button type="button" onclick="init()">인식하기</button>
     <div><canvas id="canvas"></canvas></div>
     <div id="label-container"></div>
 
@@ -63,7 +63,7 @@
             const classPrediction =
                 prediction[maxIndex].className +
                 ": " +
-                (prediction[maxIndex].probability * 100).toFixed(2) + "%";
+                (prediction[maxIndex].probability * 100).toFixed(2);
 
             // Display the result on the label container
             labelContainer.innerHTML = classPrediction;
