@@ -1,66 +1,85 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>같이 수어</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-</head>
-<body>
-    <div style="display: flex; align-items: center;">
-        <button onclick="goBack()" style="font-size:24px; margin-right: 20px;"><i class="fas fa-home"></i></button>
-        <h1 style="display: inline;">음성을 수어로</h1>
-        <button onclick="startSpeechRecognition()" style="font-size:24px; margin-left: 20px;"><i class="fas fa-microphone"></i></button>
-    </div>
+    <head>
+        <title>같이 수어</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        />
+    </head>
+    <body>
+        <div style="display: flex; align-items: center">
+            <button
+                onclick="goBack()"
+                style="font-size: 24px; margin-right: 20px"
+            >
+                <i class="fas fa-home"></i>
+            </button>
+            <h1 style="display: inline">음성을 수어로</h1>
+            <button
+                onclick="startSpeechRecognition()"
+                style="font-size: 24px; margin-left: 20px"
+            >
+                <i class="fas fa-microphone"></i>
+            </button>
+        </div>
 
-    <!-- Display the Recognized Text -->
-    <p id="recognizedText"></p>
+        <!-- Display the Recognized Text -->
+        <p id="recognizedText"></p>
 
-    <!-- Video Player -->
-    <video id="signLanguageVideo" width="320" height="240" style="display: none;" muted>
-        <source id="videoSource" src="" type="video/mp4">
-        브라우저가 비디오를 지원하지 않습니다.
-    </video>
+        <!-- Video Player -->
+        <video
+            id="signLanguageVideo"
+            width="320"
+            height="240"
+            style="display: none"
+            muted
+        >
+            <source id="videoSource" src="" type="video/mp4" />
+            브라우저가 비디오를 지원하지 않습니다.
+        </video>
 
-    <script>
-        function goBack() {
-            window.history.back();
-        }
+        <script>
+            function goBack() {
+                window.history.back();
+            }
 
-        function startSpeechRecognition() {
-            var recognition = new webkitSpeechRecognition();
-            recognition.lang = 'ko-KR';
-            recognition.onresult = function(event) {
-                var text = event.results[0][0].transcript;
-                document.getElementById('recognizedText').innerText = text;
-                // Delay playing the video by 2 seconds
-                setTimeout(function() {
-                    playVideoBasedOnText(text);
-                }, 2000);
-            };
-            recognition.start();
-        }
+            function startSpeechRecognition() {
+                var recognition = new webkitSpeechRecognition();
+                recognition.lang = "ko-KR";
+                recognition.onresult = function (event) {
+                    var text = event.results[0][0].transcript;
+                    document.getElementById("recognizedText").innerText = text;
+                    // Delay playing the video by 2 seconds
+                    setTimeout(function () {
+                        playVideoBasedOnText(text);
+                    }, 2000);
+                };
+                recognition.start();
+            }
 
-        function playVideoBasedOnText(text) {
-            var videoPlayer = document.getElementById('signLanguageVideo');
-            var videoSource = document.getElementById('videoSource');
+            function playVideoBasedOnText(text) {
+                var videoPlayer = document.getElementById("signLanguageVideo");
+                var videoSource = document.getElementById("videoSource");
 
-            videoSource.src = text + '.mp4'; // Ensure this path is correct
-            videoPlayer.load();
+                videoSource.src = text + ".mp4"; // Ensure this path is correct
+                videoPlayer.load();
 
-            videoPlayer.onerror = function() {
-                alert('동영상이 없습니다.');
-                videoPlayer.style.display = 'none';
-            };
+                videoPlayer.onerror = function () {
+                    alert("동영상이 없습니다.");
+                    videoPlayer.style.display = "none";
+                };
 
-            videoPlayer.onloadeddata = function() {
-                videoPlayer.style.display = 'block';
-                videoPlayer.play();
-                document.getElementById('recognizedText').innerText = ''; // Clear text after video starts
-            };
+                videoPlayer.onloadeddata = function () {
+                    videoPlayer.style.display = "block";
+                    videoPlayer.play();
+                    document.getElementById("recognizedText").innerText = ""; // Clear text after video starts
+                };
 
-            videoPlayer.onended = function() {
-                videoPlayer.style.display = 'none'; // Hide the video player after the video ends
-            };
-        }
-    </script>
-</body>
+                videoPlayer.onended = function () {
+                    videoPlayer.style.display = "none"; // Hide the video player after the video ends
+                };
+            }
+        </script>
+    </body>
 </html>
