@@ -1,4 +1,4 @@
-<div>Teachable Machine Pose Model</div>
+<div>수어 동작을 인식시켜 보세요.</div>
 <button type="button" onclick="init()">Start</button>
 <div><canvas id="canvas"></canvas></div>
 <div id="label-container"></div>
@@ -10,7 +10,7 @@
 
     // the link to your model provided by Teachable Machine export panel
     const URL = "./my_model/";
-    let model, webcam, ctx, labelContainer, maxPredictions;
+    let model, webcam, ctx, labelContainer, maxPredictions, recognitionTimeout;
 
     async function init() {
         const modelURL = URL + "model.json";
@@ -36,10 +36,6 @@
         canvas.height = size;
         ctx = canvas.getContext("2d");
         labelContainer = document.getElementById("label-container");
-        for (let i = 0; i < maxPredictions; i++) {
-            // and class labels
-            labelContainer.appendChild(document.createElement("div"));
-        }
     }
 
     async function loop(timestamp) {
@@ -50,32 +46,36 @@
 
     async function predict() {
         // Prediction #1: run input through posenet
-        // estimatePose can take in an image, video or canvas html element
+        // estimatePose can take in an image, video, or canvas html element
         const { pose, posenetOutput } = await model.estimatePose(webcam.canvas);
         // Prediction 2: run input through teachable machine classification model
         const prediction = await model.predict(posenetOutput);
 
-        for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction =
-                prediction[i].className +
-                ": " +
-                prediction[i].probability.toFixed(2)*100+"%";
-            labelContainer.childNodes[i].innerHTML = classPrediction;
-        }
+        // Clear the previous timeout if it exists
+        clearTimeout(recognitionTimeout);
 
-        // finally draw the poses
-        drawPose(pose);
-    }
+        // Set a new timeout to display the highest probability after 3 seconds
+        recognitionTimeout = setTimeout(() => {
+            let maxProbability = 0;
+            let maxIndex = 0;
 
-    function drawPose(pose) {
-        if (webcam.canvas) {
-            ctx.drawImage(webcam.canvas, 0, 0);
-            // draw the keypoints and skeleton
-            if (pose) {
-                const minPartConfidence = 0.5;
-                tmPose.drawKeypoints(pose.keypoints, minPartConfidence, ctx);
-                tmPose.drawSkeleton(pose.keypoints, minPartConfidence, ctx);
+            // Find the index of the highest probability
+            for (let i = 0; i < maxPredictions; i++) {
+                const probability = prediction[i].probability;
+                if (probability > maxProbability) {
+                    maxProbability = probability;
+                    maxIndex = i;
+                }
             }
-        }
+
+            // Display only the word with the highest probability
+            const classPrediction =
+                prediction[maxIndex].className +
+                ": " +
+                (maxProbability * 100).toFixed(2) + "%";
+            labelContainer.innerHTML = classPrediction;
+
+        }, 3000); // 3 seconds timeout
     }
 </script>
+
