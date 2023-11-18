@@ -8,12 +8,13 @@
             display: flex;
             align-items: center;
             margin-bottom: 10px;
+            
         }
         #suggestions {
             border: 1px solid #ddd;
             display: none;
             max-height: 25vh; /* 연관 검색어 상자의 최대 높이를 25%로 설정 */
-            max-width:22.4vh;
+            max-width:22vh;
             overflow-y: auto; /* 내용이 넘치는 경우 스크롤 허용 */
             border: 1px solid #ddd;
             margin-left: 154px; /* 오른쪽으로 10px 이동 */
@@ -25,6 +26,7 @@
     <div style="display: flex; align-items: center;">
         <button onclick="goBack()" style="font-size:24px; margin-right: 20px;"><i class="fas fa-home"></i></button>
         <h1 style="display: inline;">텍스트를 수어로</h1>
+        
     </div>
 
     <div id="inputContainer">
@@ -34,7 +36,7 @@
     </div>
     <div id="suggestions" style="border: 1px solid #ddd; display: none;"></div>
     
-    <video id="videoPlayer" width="320" height="240" style="display: none;" muted>
+    <video id="videoPlayer" width="480" height="360" style="display: none;" muted>
         <source id="videoSource" src="" type="video/mp4">
         브라우저가 비디오를 지원하지 않습니다.
     </video>
