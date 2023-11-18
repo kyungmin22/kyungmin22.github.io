@@ -26,40 +26,23 @@
             var videoPlayer = document.getElementById('videoPlayer');
             var videoSource = document.getElementById('videoSource');
 
-            // 예시로, 서버에 해당 동영상 파일이 존재하는지 확인
-            // 실제 사용 시 서버와 통신하여 존재 여부를 확인해야 합니다.
-            checkVideoExists(textInput.value, function(videoExists) {
-                if (!videoExists) {
-                    alert("입력하신 텍스트의 영상이 없습니다.");
-                    return;
-                }
+            videoSource.src = textInput.value + '.mp4'; // 예시로, 서버에 있는 파일을 참조
+            videoPlayer.load();
 
-                videoSource.src = textInput.value + '.mp4'; // 예시로, 서버에 있는 파일을 참조
-                videoPlayer.load();
+            videoPlayer.onerror = function() {
+                alert("동영상이 없습니다.");
+                videoPlayer.style.display = 'none'; // 동영상이 없을 때 창 숨기기
+            };
 
-                videoPlayer.onerror = function() {
-                    alert("동영상이 없습니다.");
-                    videoPlayer.style.display = 'none'; // 동영상이 없을 때 창 숨기기
-                };
+            videoPlayer.onloadeddata = function() {
+                videoPlayer.style.display = 'block'; // 동영상 창 보이기
+                videoPlayer.play();
+                textInput.value = ''; // 동영상 재생 시작 후 텍스트 입력칸 비우기
+            };
 
-                videoPlayer.onloadeddata = function() {
-                    videoPlayer.style.display = 'block'; // 동영상 창 보이기
-                    videoPlayer.play();
-                    textInput.value = ''; // 동영상 재생 시작 후 텍스트 입력칸 비우기
-                };
-
-                videoPlayer.onended = function() {
-                    videoPlayer.style.display = 'none'; // 동영상 재생 종료 후 창 숨기기
-                };
-            });
-        }
-
-        function checkVideoExists(videoName, callback) {
-            // 실제 서버와 통신하여 동영상 파일이 존재하는지 확인해야 합니다.
-            // 여기서는 간단히 true를 반환하는 것으로 가정하고 콜백을 호출합니다.
-            var videoExists = true; // 실제 구현 시에는 서버와의 통신 등을 통해 확인 필요
-
-            callback(videoExists);
+            videoPlayer.onended = function() {
+                videoPlayer.style.display = 'none'; // 동영상 재생 종료 후 창 숨기기
+            };
         }
 
         function goBack() {
