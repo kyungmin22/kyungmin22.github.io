@@ -61,9 +61,7 @@
 
             // Display the class label with the highest probability
             const classPrediction =
-                prediction[maxIndex].className +
-                ": " +
-                (prediction[maxIndex].probability * 100).toFixed(2);
+                prediction[maxIndex].className.toFixed(2);
 
             // Display the result on the label container
             labelContainer.innerHTML = classPrediction;
