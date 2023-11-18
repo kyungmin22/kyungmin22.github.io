@@ -21,6 +21,27 @@
 
         }
     </style>
+<head>
+    <title>같이 수어</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        #inputContainer {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            
+        }
+        #suggestions {
+            border: 1px solid #ddd;
+            display: none;
+            max-height: 25vh; /* 연관 검색어 상자의 최대 높이를 25%로 설정 */
+            max-width:22vh;
+            overflow-y: auto; /* 내용이 넘치는 경우 스크롤 허용 */
+            border: 1px solid #ddd;
+            margin-left: 154px; /* 오른쪽으로 10px 이동 */
+
+        }
+    </style>
 </head>
 <body>
     <div style="display: flex; align-items: center;">
