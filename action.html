@@ -28,8 +28,6 @@
             margin-right: 20px;
         }
 
-        
-
         #label-container {
             margin-top: 10px;
         }
@@ -46,6 +44,12 @@
     <button type="button" onclick="init()">인식하기</button>
     <div><canvas id="canvas"></canvas></div>
     <div id="label-container"></div>
+
+    <!-- ResponsiveVoice.js 라이브러리 스크립트 추가 -->
+    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+
+    <!-- 추가: 음성 출력을 위한 버튼 -->
+    <button type="button" onclick="speakRecognitionResult()">음성으로 듣기</button>
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
@@ -111,9 +115,17 @@
             }
         }
 
+        // 추가: 음성 출력 함수
+        function speakRecognitionResult() {
+            const recognitionResult = labelContainer.innerHTML;
+            
+            // ResponsiveVoice.js를 사용하여 음성 출력
+            responsiveVoice.speak(recognitionResult, "Korean Female"); // "Korean Female"은 사용할 음성의 종류를 나타냅니다.
+        }
+
         function goBack() {
             window.history.back();
         }
     </script>
 </body>
-</html> 
+</html>
