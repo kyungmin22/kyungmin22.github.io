@@ -61,6 +61,15 @@
             const modelURL = URL + "model.json";
             const metadataURL = URL + "metadata.json";
 
+            // 기존에 초기화된 모델 및 웹캠이 있다면 정지하고 삭제
+            if (model) {
+                await model.stop();
+            }
+            if (webcam) {
+                webcam.stop();
+            }
+
+            // 새로운 모델 및 웹캠 초기화
             model = await tmPose.load(modelURL, metadataURL);
             maxPredictions = model.getTotalClasses();
 
