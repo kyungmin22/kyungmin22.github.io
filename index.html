@@ -1,36 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>같이 수어</title>
     <style>
-        /* Centering the content */
-        body, html {
-            height: 100%;
+        body {
             margin: 0;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            font-family: Arial, sans-serif;
-        }
-        
-
-        h1 {
-            margin-bottom: 20px; /* Add some space below the heading */
+            justify-content: center;
+            height: 100vh;
+            line-height: 1.2;
         }
 
-        button {
-            margin: 10px 0; /* Vertical space between buttons */
-            width: 200px; /* Set a specific width for all buttons */
+        .item-01-3TH {
+            align-items: center;
+            background-color: #fafafa;
+            box-sizing: border-box;
+            display: flex;
+            overflow: hidden;
+            padding: 0rem 2.5rem 0rem 3.2rem;
+            position: relative;
+            width: 100%;
+        }
+
+        .item-01-RTq {
+            flex-shrink: 0;
+            height: 49.2rem;
+            margin: 0rem 1.45rem 5.7rem 0rem;
+            object-fit: cover;
+            vertical-align: top;
+            width: 34.25rem;
+        }
+
+        .group-4-zYs {
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+        }
+
+        .item--LMq {
+            color: rgba(0, 0, 0, 0.8);
+            flex-shrink: 0;
+            font-family: Inter, 'Source Sans Pro';
+            font-size: 1.4rem;
+            font-weight: 400;
+            letter-spacing: -0.0084rem;
+            line-height: 1.7142857143;
+            margin-bottom: 4.6rem;
+            max-width: 27.1rem;
+        }
+
+        .item--pRR {
+            color: #000000;
+            flex-shrink: 0;
+            font-family: Inter, 'Source Sans Pro';
+            font-size: 3.8rem;
+            font-weight: 700;
+            letter-spacing: -0.0722rem;
+            line-height: 1.1500000201;
+            margin-left: 1rem;
+            white-space: nowrap;
+        }
+
+        #goToIndexButton {
+            margin-top: 20px;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
-    <h1>같이 수어</h1>
-    <button onclick="location.href='text.html'">텍스트를 수어로</button><br><br>
-    <button onclick="location.href='text2.html'">음성을 수어로</button><br><br>
-    <button onclick="location.href='action.html'">수어 동작을 텍스트로</button>
+
+    <div class="item-01-3TH">
+        <!-- '같이 수어' 프로젝트 소개 멘트 -->
+        <div class="group-4-zYs">
+            <h1 class="item--pRR">우리들의 가치 있는 소통, 같이 수어</h1>
+            <p class="item--LMq">하나의 언어로, 하나의 마음으로 소통하는 세상을 '같이 수어'는 꿈꿉니다.</p>
+            <p class="item--LMq">'같이 수어'와 함께 대화의 폭을 넓혀보세요.</p>
+        </div>
+
+        <!-- 사용해보기 버튼 -->
+        <button id="goToIndexButton">사용해보기</button>
+    </div>
+
+    <script>
+        document.getElementById('goToIndexButton').addEventListener('click', function() {
+            window.location.href = 'start.html';
+        });
+    </script>
+
 </body>
 </html>
-
-
