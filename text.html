@@ -2,67 +2,54 @@
 <html>
 <head>
     <title>같이 수어</title>
+    <!-- Font Awesome 아이콘 라이브러리 링크 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
+        /* 입력 컨테이너 스타일링 */
         #inputContainer {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            
+            display: flex; /* 플렉스 박스 설정 */
+            align-items: center; /* 아이템 수직 중앙 정렬 */
+            margin-bottom: 10px; /* 아래쪽 마진 설정 */
         }
-        #suggestions {
-            border: 1px solid #ddd;
-            display: none;
-            max-height: 25vh; /* 연관 검색어 상자의 최대 높이를 25%로 설정 */
-            max-width:22vh;
-            overflow-y: auto; /* 내용이 넘치는 경우 스크롤 허용 */
-            border: 1px solid #ddd;
-            margin-left: 154px; /* 오른쪽으로 10px 이동 */
 
-        }
-    </style>
-<head>
-    <title>같이 수어</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <style>
-        #inputContainer {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            
-        }
+        /* 자동 완성 제안 상자 스타일링 */
         #suggestions {
-            border: 1px solid #ddd;
-            display: none;
-            max-height: 25vh; /* 연관 검색어 상자의 최대 높이를 25%로 설정 */
-            max-width:22vh;
-            overflow-y: auto; /* 내용이 넘치는 경우 스크롤 허용 */
-            border: 1px solid #ddd;
-            margin-left: 154px; /* 오른쪽으로 10px 이동 */
-
+            border: 1px solid #ddd; /* 테두리 스타일 */
+            display: none; /* 기본적으로 숨김 */
+            max-height: 25vh; /* 최대 높이 설정 */
+            max-width: 22vh; /* 최대 너비 설정 */
+            overflow-y: auto; /* 내용이 넘치면 스크롤 허용 */
+            margin-left: 154px; /* 왼쪽 여백 설정 */
         }
     </style>
 </head>
 <body>
+    <!-- 홈 버튼 및 페이지 제목 -->
     <div style="display: flex; align-items: center;">
-        <button onclick="goBack()" style="font-size:24px; margin-right: 20px;"><i class="fas fa-home"></i></button>
+        <button onclick="goBack()" style="font-size:24px; margin-right: 20px;">
+            <i class="fas fa-home"></i> <!-- 홈 아이콘 -->
+        </button>
         <h1 style="display: inline;">텍스트를 수어로</h1>
-        
     </div>
 
+    <!-- 텍스트 입력 및 확인 버튼 컨테이너 -->
     <div id="inputContainer">
         <label for="textInput">텍스트를 입력하세요:</label>
         <input type="text" id="textInput" placeholder="여기에 입력하세요" oninput="showSuggestions(this.value)">
         <button onclick="playVideo()">확인</button>
     </div>
-    <div id="suggestions" style="border: 1px solid #ddd; display: none;"></div>
+
+    <!-- 자동 완성 제안 상자 -->
+    <div id="suggestions"></div>
     
+    <!-- 비디오 플레이어 -->
     <video id="videoPlayer" width="480" height="360" style="display: none;" muted>
         <source id="videoSource" src="" type="video/mp4">
         브라우저가 비디오를 지원하지 않습니다.
     </video>
 
     <script>
+        // 수어 영상 파일명을 담은 배열
         var videoNames = ["안녕하세요", "안녕", "감사합니다", "고마워", "고마워요", "고맙습니다", "기뻐", "기뻐요", "기쁩니다", "더워", 
         "더워요", "덥다", "덥습니다", "만나서 반가워", "만나서 반갑다", "만나서 반갑습니다", "미안", "미안하다", "미안합니다", "미안해", 
         "미안해요", "배가 고픕니다", "배고파", "배고파요", "배고프다", "사랑합니다", "사랑해", "사랑해요", "슬퍼", "슬퍼요", "슬프다",
@@ -78,7 +65,9 @@
         "example41", "example42", "example43", "example44", "example45", "example46", "example47", "example48", "example49", "example50", 
         "example51", "example52", "example53", "example54", "example55", "example56", "example57", "example58", "example59", "example60", 
         "example61", "example62", "example63", "example64", "example65", "example66", "example67", "example68", "example69", "example70", 
-        "example71", "example72", "example73", "example74", "example75", "example76", "example77", "example78", "example79", "example80"]
+        "example71", "example72", "example73", "example74", "example75", "example76", "example77", "example78", "example79", "example80"];
+
+        // 사용자 입력에 따라 자동 완성 제안을 표시하는 함수
         function showSuggestions(value) {
             var suggestions = document.getElementById("suggestions");
             suggestions.innerHTML = '';
@@ -101,30 +90,36 @@
             suggestions.style.display = 'block';
         }
 
+        // '확인' 버튼 클릭 시 비디오 재생 함수
         function playVideo() {
             var textInput = document.getElementById('textInput');
             var videoPlayer = document.getElementById('videoPlayer');
             var videoSource = document.getElementById('videoSource');
 
-            videoSource.src = '수어 영상/'+textInput.value+'.mp4'; // 예시로, 서버에 있는 파일을 참조
+            // 비디오 소스 경로 설정
+            videoSource.src = '수어 영상/'+textInput.value+'.mp4'; 
             videoPlayer.load();
 
+            // 비디오 로드 에러 처리
             videoPlayer.onerror = function() {
                 alert("동영상이 없습니다.");
                 videoPlayer.style.display = 'none';
             };
 
+            // 비디오 로드 완료 처리
             videoPlayer.onloadeddata = function() {
                 videoPlayer.style.display = 'block';
                 videoPlayer.play();
                 textInput.value = '';
             };
 
+            // 비디오 재생 종료 처리
             videoPlayer.onended = function() {
                 videoPlayer.style.display = 'none';
             };
         }
 
+        // 뒤로가기 함수
         function goBack() {
             window.history.back();
         }

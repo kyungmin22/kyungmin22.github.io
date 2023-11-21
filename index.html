@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>같이 수어</title>
     <style>
+        /* 기본 바디 스타일 설정 */
         body {
             display: flex;
             flex-direction: column;
@@ -12,38 +13,43 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            line-height: 1.2; /* Adjust the line height to your preference */
+            line-height: 1.2; /* 줄 간격 조정 */
         }
 
+        /* 제목(h1), 문단(p), 버튼(#goToIndexButton)의 스타일 설정 */
         h1, p, #goToIndexButton {
             text-align: center;
-            margin-bottom: 10px; /* Adjust the bottom margin of each element */
+            margin-bottom: 10px; /* 각 요소의 하단 여백 조정 */
         }
 
+        /* 제목(h1)의 상단 여백 조정 */
         h1 {
-            margin-top: 20px; /* Adjust the top margin of the h1 element to move it up */
+            margin-top: 20px;
         }
 
+        /* '사용해보기' 버튼 스타일 설정 */
         #goToIndexButton {
-            margin-top: 20px; /* Adjust the top margin of the button to move it down */
-            font-size: 18px; /* Adjust the font size to your preference */
+            margin-top: 20px; /* 버튼의 상단 여백 조정 */
+            font-size: 18px; /* 버튼의 글꼴 크기 조정 */
         }
     </style>
 </head>
 <body>
 
+    <!-- 페이지 제목 -->
     <h1>우리들의 가치 있는 소통, 같이 수어</h1><p></p>
 
     <!-- '같이 수어' 프로젝트 소개 멘트 -->
     <p>하나의 언어로, 하나의 마음으로 소통하는 세상을 '같이 수어'는 꿈꿉니다.</p>
-    '같이 수어'와 함께 대화의 폭을 넓혀보세요.<p></p>
+    <p>'같이 수어'와 함께 대화의 폭을 넓혀보세요.</p>
 
     <!-- 사용해보기 버튼 -->
     <button id="goToIndexButton">사용해보기</button>
 
+    <!-- 버튼 클릭 시 다른 페이지로 이동하는 스크립트 -->
     <script>
         document.getElementById('goToIndexButton').addEventListener('click', function() {
-            window.location.href = 'start.html';
+            window.location.href = 'start.html'; // 'start.html' 페이지로 이동
         });
     </script>
 

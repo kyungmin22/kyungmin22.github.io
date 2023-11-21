@@ -3,36 +3,34 @@
     <head>
         <title>같이 수어</title>
         <style>
-            /* Centering the content */
-            body,
-            html {
-                height: 100%;
-                margin: 0;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                font-family: Arial, sans-serif;
+            /* 콘텐츠 중앙 정렬 */
+            body, html {
+                height: 100%; /* 전체 높이 설정 */
+                margin: 0; /* 마진 제거 */
+                display: flex; /* 플렉스박스 사용 */
+                flex-direction: column; /* 세로 방향으로 정렬 */
+                justify-content: center; /* 수직 중앙 정렬 */
+                align-items: center; /* 수평 중앙 정렬 */
+                font-family: Arial, sans-serif; /* 폰트 설정 */
             }
 
             h1 {
-                margin-bottom: 20px; /* Add some space below the heading */
+                margin-bottom: 20px; /* 제목 아래 여백 추가 */
             }
 
             button {
-                margin: 10px 0; /* Vertical space between buttons */
-                width: 200px; /* Set a specific width for all buttons */
+                margin: 10px 0; /* 버튼 사이의 수직 여백 */
+                width: 200px; /* 버튼 너비 설정 */
             }
         </style>
     </head>
     <body>
-        <h1>같이 수어</h1>
-        <button onclick="location.href='text.html'">텍스트를 수어로</button
-        ><br /><br />
-        <button onclick="location.href='text2.html'">음성을 수어로</button
-        ><br /><br />
-        <button onclick="location.href='action.html'">
-            수어 동작을 텍스트로
-        </button>
+        <h1>같이 수어</h1> <!-- 페이지 제목 -->
+        <!-- 텍스트를 수어로 변환하는 페이지로 이동하는 버튼 -->
+        <button onclick="location.href='text.html'">텍스트를 수어로</button><br /><br />
+        <!-- 음성을 수어로 변환하는 페이지로 이동하는 버튼 -->
+        <button onclick="location.href='text2.html'">음성을 수어로</button><br /><br />
+        <!-- 수어 동작을 텍스트로 변환하는 페이지로 이동하는 버튼 -->
+        <button onclick="location.href='action.html'">수어 동작을 텍스트로</button>
     </body>
-</html>
+</html> 
