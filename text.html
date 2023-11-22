@@ -21,6 +21,19 @@
             overflow-y: auto; /* 내용이 넘치면 스크롤 허용 */
             margin-left: 154px; /* 왼쪽 여백 설정 */
         }
+
+        /* 사용자 정의 팝업 스타일 */
+        #customAlert {
+            display: none; /* 기본적으로 숨김 */
+            position: fixed; /* 고정 위치 */
+            left: 50%; /* 중앙에 위치 */
+            top: 50%;
+            transform: translate(-50%, -50%); /* 중앙 정렬 */
+            border: 1px solid #ddd;
+            padding: 20px;
+            background-color: white;
+            z-index: 1000; /* 다른 요소 위에 표시 */
+        }
     </style>
 </head>
 <body>
@@ -48,6 +61,13 @@
         브라우저가 비디오를 지원하지 않습니다.
     </video>
 
+    <!-- 사용자 정의 팝업 -->
+    <div id="customAlert" style="text-align: center;">
+        <p>수어 동영상이 없습니다.</p>
+        <button onclick="closeCustomAlert()" style="margin: 0 auto;">확인</button>
+    </div>
+    
+
     <script>
         // 수어 영상 파일명을 담은 배열
         var videoNames = ["안녕하세요", "안녕", "감사합니다", "고마워", "고마워요", "고맙습니다", "기뻐", "기뻐요", "기쁩니다", "더워", 
@@ -65,7 +85,7 @@
         "example41", "example42", "example43", "example44", "example45", "example46", "example47", "example48", "example49", "example50", 
         "example51", "example52", "example53", "example54", "example55", "example56", "example57", "example58", "example59", "example60", 
         "example61", "example62", "example63", "example64", "example65", "example66", "example67", "example68", "example69", "example70", 
-        "example71", "example72", "example73", "example74", "example75", "example76", "example77", "example78", "example79", "example80"];
+        "example71", "example72", "example73", "example74", "example75", "example76", "example77", "example78", "example79", "example80"]; // 배열은 기존대로 유지
 
         // 사용자 입력에 따라 자동 완성 제안을 표시하는 함수
         function showSuggestions(value) {
@@ -92,17 +112,23 @@
 
         // '확인' 버튼 클릭 시 비디오 재생 함수
         function playVideo() {
-            var textInput = document.getElementById('textInput');
+            var textInput = document.getElementById('textInput').value;
             var videoPlayer = document.getElementById('videoPlayer');
             var videoSource = document.getElementById('videoSource');
 
-            // 비디오 소스 경로 설정
-            videoSource.src = '수어 영상/'+textInput.value+'.mp4'; 
+            // 입력된 텍스트가 비디오 목록에 있는지 확인
+            if (!videoNames.includes(textInput)) {
+                document.getElementById('customAlert').style.display = 'block';
+                return;
+            }
+
+            // 비디오 소스 경로 설정 및 로드
+            videoSource.src = '수어 영상/'+textInput+'.mp4'; 
             videoPlayer.load();
 
             // 비디오 로드 에러 처리
             videoPlayer.onerror = function() {
-                alert("동영상이 없습니다.");
+                alert("동영상 로드에 실패했습니다.");
                 videoPlayer.style.display = 'none';
             };
 
@@ -110,13 +136,18 @@
             videoPlayer.onloadeddata = function() {
                 videoPlayer.style.display = 'block';
                 videoPlayer.play();
-                textInput.value = '';
+                document.getElementById('textInput').value = '';
             };
 
             // 비디오 재생 종료 처리
             videoPlayer.onended = function() {
                 videoPlayer.style.display = 'none';
             };
+        }
+
+        // 사용자 정의 팝업을 닫는 함수
+        function closeCustomAlert() {
+            document.getElementById('customAlert').style.display = 'none';
         }
 
         // 뒤로가기 함수
