@@ -1,66 +1,98 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>같이 수어</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-</head>
-<body>
-    <div style="display: flex; align-items: center;">
-        <button onclick="goBack()" style="font-size:24px; margin-right: 20px;"><i class="fas fa-home"></i></button>
-        <h1 style="display: inline;">음성을 수어로</h1>
-        <button onclick="startSpeechRecognition()" style="font-size:24px; margin-left: 20px;"><i class="fas fa-microphone"></i></button>
-    </div>
+    <head>
+        <title>같이 수어</title>
+        <!-- Font Awesome 아이콘 스타일시트 링크 -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        />
+    </head>
+    <body>
+        <!-- 상단 네비게이션 바 -->
+        <div style="display: flex; align-items: center">
+            <!-- 뒤로가기 버튼 -->
+            <button
+                onclick="goBack()"     
+                style="font-size: 24px; margin-right: 20px" 
+            >
+                <i class="fas fa-home"></i>  <!-- FontAwesome 아이콘 라이브러리의 'fa-home' 아이콘을 사용합니다. 이 아이콘은 집 모양을 나타내며, 버튼 내에서 시각적 요소로 사용됩니다. -->
+            </button>
+            </button>
+            <!-- 페이지 제목 -->
+            <h1 style="display: inline">음성을 수어로</h1>
+            <!-- 음성 인식 시작 버튼 -->
+            <button
+                onclick="startSpeechRecognition()"
+                style="font-size: 24px; margin-left: 20px"
+            >
+                <i class="fas fa-microphone"></i>
+            </button>
+        </div>
 
-    <!-- Display the Recognized Text -->
-    <p id="recognizedText"></p>
+        <!-- 인식된 텍스트 표시 -->
+        <p id="recognizedText"></p>
 
-    <!-- Video Player -->
-    <video id="signLanguageVideo" width="320" height="240" style="display: none;" muted>
-        <source id="videoSource" src="" type="video/mp4">
-        브라우저가 비디오를 지원하지 않습니다.
-    </video>
+        <!-- 비디오 플레이어 -->
+        <video
+            id="signLanguageVideo"
+            width="480"
+            height="360"
+            style="display: none"
+            muted
+        >
+            <source id="videoSource" src="" type="video/mp4" />
+            브라우저가 비디오를 지원하지 않습니다.
+        </video>
 
-    <script>
-        function goBack() {
-            window.history.back();
-        }
+        <script>
+            // 뒤로가기 함수
+            function goBack() {
+                window.history.back();
+            }
 
-        function startSpeechRecognition() {
-            var recognition = new webkitSpeechRecognition();
-            recognition.lang = 'ko-KR';
-            recognition.onresult = function(event) {
-                var text = event.results[0][0].transcript;
-                document.getElementById('recognizedText').innerText = text;
-                // Delay playing the video by 2 seconds
-                setTimeout(function() {
-                    playVideoBasedOnText(text);
-                }, 2000);
-            };
-            recognition.start();
-        }
+            // 음성 인식 시작 함수
+            function startSpeechRecognition() {
+                var recognition = new webkitSpeechRecognition();
+                recognition.lang = "ko-KR"; // 한국어로 설정
+                recognition.onresult = function (event) {
+                    var text = event.results[0][0].transcript; // 인식된 텍스트 추출
+                    document.getElementById("recognizedText").innerText = text; // 텍스트 표시
+                    // 비디오 재생을 2초 뒤에 시작
+                    setTimeout(function () {
+                        playVideoBasedOnText(text);
+                    }, 2000);
+                };
+                recognition.start(); // 음성 인식 시작
+            }
 
-        function playVideoBasedOnText(text) {
-            var videoPlayer = document.getElementById('signLanguageVideo');
-            var videoSource = document.getElementById('videoSource');
+            // 텍스트에 따른 비디오 재생 함수
+            function playVideoBasedOnText(text) {
+                var videoPlayer = document.getElementById("signLanguageVideo");
+                var videoSource = document.getElementById("videoSource");
 
-            videoSource.src = text + '.mp4'; // Ensure this path is correct
-            videoPlayer.load();
+                // 비디오 소스 경로 업데이트
+                videoSource.src = "수어 영상/" + text + ".mp4"; // '수어 영상' 폴더 안의 동영상을 참조
+                videoPlayer.load();
 
-            videoPlayer.onerror = function() {
-                alert('동영상이 없습니다.');
-                videoPlayer.style.display = 'none';
-            };
+                // 비디오 로드 에러 처리
+                videoPlayer.onerror = function () {
+                    alert("동영상이 없습니다.");
+                    videoPlayer.style.display = "none";
+                };
 
-            videoPlayer.onloadeddata = function() {
-                videoPlayer.style.display = 'block';
-                videoPlayer.play();
-                document.getElementById('recognizedText').innerText = ''; // Clear text after video starts
-            };
+                // 비디오 로드 완료 처리
+                videoPlayer.onloadeddata = function () {
+                    videoPlayer.style.display = "block";
+                    videoPlayer.play();
+                    document.getElementById("recognizedText").innerText = ""; // 비디오 시작 후 텍스트 초기화
+                };
 
-            videoPlayer.onended = function() {
-                videoPlayer.style.display = 'none'; // Hide the video player after the video ends
-            };
-        }
-    </script>
-</body>
+                // 비디오 종료 시 처리
+                videoPlayer.onended = function () {
+                    videoPlayer.style.display = "none"; // 비디오 종료 후 플레이어 숨김
+                };
+            }
+        </script>
+    </body>
 </html>
