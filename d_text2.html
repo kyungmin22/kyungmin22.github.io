@@ -114,15 +114,15 @@
       style="
         text-align: center;
         display: none;
-        position: absolute;
-        top: 50%; /* Set top to 50% to center vertically */
-        left: 50%; /* Set left to 50% to center horizontally */
-        transform: translate(
-          -50%,
-          -50%
-        ); /* Center both horizontally and vertically */
+        position: fixed; /* position을 fixed로 변경합니다. */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto; /* margin을 auto로 설정하여 가운데 정렬합니다. */
         z-index: 1;
         width: 300px;
+        height: 150px; /* 높이 설정 */
         background-color: rgb(255, 255, 255);
         padding: 20px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.374);
