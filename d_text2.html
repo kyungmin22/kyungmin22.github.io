@@ -5,7 +5,7 @@
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <title>4페이지</title>
+    <title>같이 수어</title>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Gmarket+Sans+TTF%3A500"
@@ -26,60 +26,43 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Pretendard%3A400"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="./styles/.css" />
   </head>
   <body>
     <div class="item-4-r3o">
-      <div class="navigation-desktop-01-ri1">
-        <div class="logo-fos">
-          <img class="flash-AVj" src="./assets/flash-SYm.png" />
-          <p class="item--68V">같이 수어</p>
-        </div>
-        <div class="links--LHj"></div>
-        <div class="buttons-Gx5">
-          <div class="buttons-E8D">
-            <div class="button-z7P" onclick="location.href='d_start.html'">
-              HOME
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- 나머지 네비게이션 및 로고 부분 -->
+
       <div class="hero-mXT">
         <p class="item--gPX">음성을 수어로</p>
         <p class="try-changing-the-voice-to-sign-language-Ygd">
           Try changing the voice to sign language
         </p>
-        <div class="button-FL9">
+        <div class="button-FL9" onclick="startSpeechRecognition()">
           <div class="master-button-M8H">
             <p class="item--ttu">말하기</p>
-            <img
-              class="auto-group-zuhb-Ceh"
-              src="./assets/auto-group-zuhb.png"
-            />
+            <i class="fas fa-microphone"></i>
           </div>
         </div>
-        <div class="auto-group-djey-hLZ">
-          <div class="header-39X"></div>
-          <div class="badge-MAD">
-            <div class="master-badge-rcm">
-              <img class="icon-l-Psb" src="./assets/icon-l-Nx5.png" />
-              <p class="badge-jRf">Ok</p>
-            </div>
-          </div>
-          <p class="item--gtd">음성인식중입니다... *_*</p>
-          <div class="item--9GR">
-            <img
-              class="icon-sadseriousemojimeh-24-outline-cfo"
-              src="./assets/icon-sadseriousemojimeh-24-outline.png"
-            />
-            <p class="item--4Xo">수어 영상이 존재하지 않습니다</p>
-            <img
-              class="icon-sadseriousemojimeh-24-outline-tWq"
-              src="./assets/icon-sadseriousemojimeh-24-outline-5e5.png"
-            />
-          </div>
-        </div>
+        <p id="recognizedText"></p>
+        <video
+          id="signLanguageVideo"
+          width="480"
+          height="360"
+          style="display: none"
+          muted
+        >
+          <source id="videoSource" src="" type="video/mp4" />
+          브라우저가 비디오를 지원하지 않습니다.
+        </video>
       </div>
     </div>
+
+    <script>
+      // 기존 JavaScript 코드
+    </script>
   </body>
 </html>
