@@ -78,7 +78,6 @@
           >
             <!-- 음성 인식 결과가 여기에 표시됩니다 -->
           </div>
-
           <!-- 음성 인식 결과를 표시할 요소 -->
 
           <!-- 비디오 플레이어 -->
@@ -115,9 +114,9 @@
         text-align: center;
         display: none;
         position: absolute;
-        top: 60%; /* 상대적인 위치를 화면 중앙 아래로 설정 */
-        left: 50%; /* 상대적인 위치는 화면 중앙 가운데로 설정 */
-        transform: translate(-50%, 50%); /* 중앙 정렬 */
+        top: 60%; /* 위치를 아래로 조정 */
+        left: 50%;
+        transform: translate(-50%, -50%);
         z-index: 1;
         width: 300px;
         background-color: rgb(255, 255, 255);
@@ -145,7 +144,6 @@
         OK
       </button>
     </div>
-
     <script>
       // 비디오 파일 목록
       var videoNames = [
@@ -354,7 +352,6 @@
       // 사용자 정의 팝업을 닫는 함수
       function closeCustomAlert() {
         document.getElementById("customAlert").style.display = "none";
-        document.getElementById("speechRecognitionResult").textContent = ""; // 음성 인식 결과 텍스트 제거
       }
     </script>
   </body>
