@@ -60,25 +60,24 @@
         </div>
         <div class="auto-group-djey-hLZ">
           <div class="header-39X"></div>
-
+          <!-- 음성 인식 결과를 표시할 요소 추가 -->
+          <div id="speechRecognitionResult"></div>
           <p class="item--gtd">음성인식중입니다... *_*</p>
           <div class="item--9GR"></div>
         </div>
       </div>
     </div>
     <script>
+      // 음성 인식을 시작하는 함수
       function startSpeechRecognition() {
         var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
         var recognition = new SpeechRecognition();
 
         recognition.onresult = function (event) {
-          var transcript = event.results[0][0].transcript;
-          console.log("인식된 텍스트: " + transcript);
-          alert("인식된 텍스트: " + transcript);
-        };
-
-        recognition.onerror = function (event) {
-          console.error("음성 인식 에러:", event.error);
+          var transcript = event.results[0][0].transcript; // 인식된 텍스트
+          // 음성 인식 결과를 표시할 요소에 텍스트 설정
+          document.getElementById("speechRecognitionResult").textContent =
+            transcript;
         };
 
         recognition.start();
