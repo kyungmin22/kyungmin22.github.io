@@ -115,9 +115,12 @@
         text-align: center;
         display: none;
         position: absolute;
-        top: 60%; /* 위치를 아래로 조정 */
-        left: 50%;
-        transform: translate(-50%, -50%);
+        top: 50%; /* Set top to 50% to center vertically */
+        left: 50%; /* Set left to 50% to center horizontally */
+        transform: translate(
+          -50%,
+          -50%
+        ); /* Center both horizontally and vertically */
         z-index: 1;
         width: 300px;
         background-color: rgb(255, 255, 255);
@@ -145,6 +148,7 @@
         OK
       </button>
     </div>
+
     <script>
       // 비디오 파일 목록
       var videoNames = [
