@@ -304,10 +304,10 @@
         };
 
         videoPlayer.onerror = function () {
-          // 오류 발생 시 비디오 숨김 및 경고창 표시
+          // 비디오 파일 로드 실패 시 경고창 표시
           videoPlayer.style.display = "none";
           document.getElementById("speechRecognitionResult").textContent = "";
-          alert("해당하는 동영상이 없습니다.");
+          alert("파일이 없습니다.");
         };
 
         videoPlayer.onended = function () {
