@@ -75,17 +75,6 @@
               text-align: center; /* 텍스트 중앙 정렬 */
             "
           >
-            <!-- 비디오 플레이어를 박스 안에 배치 -->
-            <video
-              id="videoPlayer"
-              width="320"
-              height="240"
-              controls
-              style="display: none"
-            >
-              <source id="videoSource" src="" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
             <!-- 음성 인식 결과가 여기에 표시됩니다 -->
           </div>
 
@@ -127,31 +116,13 @@
         recognition.start();
       }
 
-      function playVideoBasedOnTranscript(transcript) {
-        var videoPlayer = document.getElementById("videoPlayer");
+      function playVideoBasedOnText(text) {
+        var videoPlayer = document.getElementById("signLanguageVideo");
         var videoSource = document.getElementById("videoSource");
 
-        // 비디오 소스 경로 업데이트 - '수어 영상' 폴더 내의 동영상을 참조
-        videoSource.src = "수어 영상/" + transcript + ".mp4";
-
+        // 비디오 소스 경로 업데이트
+        videoSource.src = "수어 영상/" + text + ".mp4"; // '수어 영상' 폴더 안의 동영상을 참조
         videoPlayer.load();
-
-        // 비디오 로드 에러 처리
-        videoPlayer.onerror = function () {
-          alert("동영상이 없습니다.");
-          videoPlayer.style.display = "none";
-        };
-
-        // 비디오 로드 완료 처리
-        videoPlayer.onloadeddata = function () {
-          videoPlayer.style.display = "block";
-          videoPlayer.play();
-        };
-
-        // 비디오 재생 종료 시 처리
-        videoPlayer.onended = function () {
-          videoPlayer.style.display = "none";
-        };
       }
     </script>
   </body>
