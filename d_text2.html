@@ -75,7 +75,7 @@
               text-align: center; /* 텍스트 중앙 정렬 */
             "
           >
-            <!-- 팝업창 구조 -->
+            <!-- 사용자 정의 팝업창 -->
             <div
               id="customAlert"
               style="
@@ -335,12 +335,8 @@
         };
 
         videoPlayer.onerror = function () {
-          showCustomAlert(); // 비디오 로드 실패 시 팝업창 표시
+          document.getElementById("customAlert").style.display = "block"; // 비디오 로드 실패 시 팝업창 표시
         };
-      }
-
-      function showCustomAlert() {
-        document.getElementById("customAlert").style.display = "block";
       }
 
       function closeCustomAlert() {
