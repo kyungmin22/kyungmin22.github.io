@@ -274,11 +274,11 @@
 
         recognition.onresult = function (event) {
           var transcript = event.results[0][0].transcript.trim(); // 공백 제거
-          document.getElementById("speechRecognitionResult").textContent =
-            transcript;
 
           if (transcript) {
-            // 텍스트가 있을 경우, 2초 후 비디오 재생
+            // 텍스트가 있을 경우, 비디오 재생 로직 실행
+            document.getElementById("speechRecognitionResult").textContent =
+              transcript;
             setTimeout(function () {
               playVideoBasedOnTranscript(transcript);
             }, 2000);
@@ -304,9 +304,10 @@
         };
 
         videoPlayer.onerror = function () {
+          // 오류 발생 시 비디오 숨김 및 경고창 표시
           videoPlayer.style.display = "none";
           document.getElementById("speechRecognitionResult").textContent = "";
-          alert("동영상이 없습니다.");
+          alert("해당하는 동영상이 없습니다.");
         };
 
         videoPlayer.onended = function () {
