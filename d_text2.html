@@ -65,11 +65,12 @@
             id="speechRecognitionResult"
             style="
               position: absolute;
-              top: 10%;
+              top: 5%; /* 텍스트의 상단 위치 조정 */
               left: 50%;
               transform: translate(-50%, -50%);
               z-index: 2;
-              font-size: 20px; /* 글씨 크기 증가 */
+              font-size: 25px; /* 글씨 크기 증가 */
+              font-weight: bold; /* 글자 두껍게 */
               color: #000; /* 글씨 색상 설정, 필요에 따라 변경 가능 */
               max-width: 80%; /* 상자의 최대 너비 */
               text-align: center; /* 텍스트 중앙 정렬 */
@@ -104,6 +105,44 @@
           <div class="item--9GR"></div>
         </div>
       </div>
+    </div>
+
+    <!-- 사용자 정의 팝업 -->
+    <div
+      id="customAlert"
+      style="
+        text-align: center;
+        display: none;
+        position: absolute;
+        top: 60%; /* 위치를 아래로 조정 */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        width: 300px;
+        background-color: rgb(255, 255, 255);
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.374);
+      "
+    >
+      <!-- 글자 두껍게 및 크기 조정 -->
+      <p style="font-size: 18px; font-weight: bold">
+        수어 영상이 존재하지 않습니다.
+      </p>
+      <button
+        onclick="closeCustomAlert()"
+        style="
+          margin-top: 20px;
+          background-color: #d6bfd2; /* 연보라색 HEX 코드 */
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 20px;
+          cursor: pointer;
+          font-weight: bold; /* 글자 두껍게 */
+        "
+      >
+        OK
+      </button>
     </div>
     <script>
       // 비디오 파일 목록
@@ -286,23 +325,34 @@
         var videoPlayer = document.getElementById("signLanguageVideo");
         var videoSource = document.getElementById("videoSource");
 
-        videoSource.src = "수어 영상/" + transcript + ".mp4";
-        videoPlayer.load();
+        // 입력된 텍스트가 비디오 목록에 있는지 확인
+        if (videoNames.includes(transcript)) {
+          videoSource.src = "수어 영상/" + transcript + ".mp4";
+          videoPlayer.load();
 
-        videoPlayer.onloadeddata = function () {
-          videoPlayer.style.display = "block"; // 비디오 표시
-          videoPlayer.play();
-        };
+          videoPlayer.onloadeddata = function () {
+            videoPlayer.style.display = "block"; // 비디오 표시
+            videoPlayer.play();
+          };
 
-        videoPlayer.onerror = function () {
-          videoPlayer.style.display = "none"; // 오류 시 비디오 숨김
-          document.getElementById("speechRecognitionResult").textContent = ""; // 오류 시 텍스트 제거
-        };
+          videoPlayer.onerror = function () {
+            videoPlayer.style.display = "none"; // 오류 시 비디오 숨김
+            document.getElementById("speechRecognitionResult").textContent = ""; // 오류 시 텍스트 제거
+          };
 
-        videoPlayer.onended = function () {
-          videoPlayer.style.display = "none"; // 재생 종료 시 비디오 숨김
-          document.getElementById("speechRecognitionResult").textContent = ""; // 재생 종료 시 텍스트 제거
-        };
+          videoPlayer.onended = function () {
+            videoPlayer.style.display = "none"; // 재생 종료 시 비디오 숨김
+            document.getElementById("speechRecognitionResult").textContent = ""; // 재생 종료 시 텍스트 제거
+          };
+        } else {
+          // 입력된 텍스트가 비디오 목록에 없으면 사용자 정의 팝업 표시
+          document.getElementById("customAlert").style.display = "block";
+        }
+      }
+      // 사용자 정의 팝업을 닫는 함수
+      function closeCustomAlert() {
+        document.getElementById("customAlert").style.display = "none";
+        document.getElementById("speechRecognitionResult").textContent = ""; // 음성 인식 결과 텍스트 제거
       }
     </script>
   </body>
