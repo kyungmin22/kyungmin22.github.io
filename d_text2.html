@@ -276,61 +276,33 @@
           var transcript = event.results[0][0].transcript;
           document.getElementById("speechRecognitionResult").textContent =
             transcript;
-
           playVideoBasedOnTranscript(transcript);
         };
 
         recognition.start();
       }
 
-      // 비디오 파일이 있는지 확인하는 함수
-      function isVideoAvailable(text) {
-        // 여기에서 text와 연결된 비디오 파일이 있는지 확인하는 로직을 추가합니다.
-        // 예를 들어, 비디오 파일이 있으면 true를 반환하고, 없으면 false를 반환합니다.
-        // 이 부분을 실제로 연결된 비디오 파일을 확인하는 로직으로 변경해야 합니다.
-        // 아래는 예시 코드입니다.
-
-        // 비디오 파일이 있다고 가정
-        return true;
-      }
-
-      // 팝업 창 열기 함수
-      function openCustomAlert(message) {
-        document.getElementById("popupBox").style.display = "flex"; // 팝업 창 표시
-        document.getElementById("popupMessage").textContent = message; // 팝업 메시지 설정
-      }
-
-      // 팝업 창 닫기 함수
-      function closeCustomAlert() {
-        document.getElementById("popupBox").style.display = "none"; // 팝업 창 숨김
-      }
-
-      // 음성 인식 결과를 기반으로 비디오 재생
       function playVideoBasedOnTranscript(transcript) {
-        if (isVideoAvailable(transcript)) {
-          var videoPlayer = document.getElementById("signLanguageVideo");
-          var videoSource = document.getElementById("videoSource");
+        var videoPlayer = document.getElementById("signLanguageVideo");
+        var videoSource = document.getElementById("videoSource");
 
-          videoSource.src = "수어 영상/" + transcript + ".mp4";
-          videoPlayer.load();
+        videoSource.src = "수어 영상/" + transcript + ".mp4";
+        videoPlayer.load();
 
-          videoPlayer.onloadeddata = function () {
-            videoPlayer.style.display = "block";
-            videoPlayer.play();
-          };
+        videoPlayer.onloadeddata = function () {
+          videoPlayer.style.display = "block"; // 비디오 표시
+          videoPlayer.play();
+        };
 
-          videoPlayer.onerror = function () {
-            // 비디오 재생 오류 시 팝업 창 띄우기
-            openCustomAlert("비디오 재생에 오류가 발생했습니다.");
-          };
+        videoPlayer.onerror = function () {
+          videoPlayer.style.display = "none"; // 오류 시 비디오 숨김
+          document.getElementById("speechRecognitionResult").textContent = ""; // 오류 시 텍스트 제거
+        };
 
-          videoPlayer.onended = function () {
-            videoPlayer.style.display = "none";
-          };
-        } else {
-          // 연결된 비디오가 없을 때 팝업 창 띄우기
-          openCustomAlert("수어 영상이 존재하지 않습니다.");
-        }
+        videoPlayer.onended = function () {
+          videoPlayer.style.display = "none"; // 재생 종료 시 비디오 숨김
+          document.getElementById("speechRecognitionResult").textContent = ""; // 재생 종료 시 텍스트 제거
+        };
       }
     </script>
   </body>
