@@ -2,35 +2,49 @@
 <html>
     <head>
         <title>같이 수어</title>
-        <style>
-            /* 콘텐츠 중앙 정렬 */
-            body, html {
-                height: 100%; /* 전체 높이 설정 */
-                margin: 0; /* 마진 제거 */
-                display: flex; /* 플렉스박스 사용 */
-                flex-direction: column; /* 세로 방향으로 정렬 */
-                justify-content: center; /* 수직 중앙 정렬 */
-                align-items: center; /* 수평 중앙 정렬 */
-                font-family: Arial, sans-serif; /* 폰트 설정 */
-            }
-
-            h1 {
-                margin-bottom: 20px; /* 제목 아래 여백 추가 */
-            }
-
-            button {
-                margin: 10px 0; /* 버튼 사이의 수직 여백 */
-                width: 200px; /* 버튼 너비 설정 */
-            }
-        </style>
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Archivo%3A400%2C500%2C700"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500%2C700%2C800"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=NanumSquare+Neo%3A400%2C700%2C800"
+        />
+        <link rel="stylesheet" href="./styles/landing-example-.css" />
+        <style></style>
     </head>
     <body>
-        <h1>같이 수어</h1> <!-- 페이지 제목 -->
-        <!-- 텍스트를 수어로 변환하는 페이지로 이동하는 버튼 -->
-        <button onclick="location.href='text.html'">텍스트를 수어로</button><br /><br />
-        <!-- 음성을 수어로 변환하는 페이지로 이동하는 버튼 -->
-        <button onclick="location.href='text2.html'">음성을 수어로</button><br /><br />
-        <!-- 수어 동작을 텍스트로 변환하는 페이지로 이동하는 버튼 -->
-        <button onclick="location.href='action.html'">수어 동작을 텍스트로</button>
+        <div class="landing-example--KnR">
+            <div class="hero-8VX">
+                <div class="hero-wireframe-desktop-18-FKF">
+                    <div class="button-acR" onclick="location.href='text.html'">
+                        <span class="button-acR-sub-0">텍스트</span>
+                        <span class="button-acR-sub-1">를 수어로 바꾸기</span>
+                    </div>
+                    <div
+                        class="button-Bkd"
+                        onclick="location.href='text2.html'"
+                    >
+                        <span class="button-Bkd-sub-0">음성</span>
+                        <span class="button-Bkd-sub-1">을</span>
+                        <span class="button-Bkd-sub-2"> 수어로 바꾸기</span>
+                    </div>
+                    <div
+                        class="button-hF7"
+                        onclick="location.href='action.html'"
+                    >
+                        <span class="button-hF7-sub-0">수어동작</span>
+                        <span class="button-hF7-sub-1">을</span>
+                        <span class="button-hF7-sub-2"> </span>
+                        <span class="button-hF7-sub-3">언어</span>
+                        <span class="button-hF7-sub-4">로 바꾸기</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
-</html> 
+</html>

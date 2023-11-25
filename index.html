@@ -1,57 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>같이 수어</title>
-    <style>
-        /* 기본 바디 스타일 설정 */
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            line-height: 1.2; /* 줄 간격 조정 */
-        }
-
-        /* 제목(h1), 문단(p), 버튼(#goToIndexButton)의 스타일 설정 */
-        h1, p, #goToIndexButton {
-            text-align: center;
-            margin-bottom: 10px; /* 각 요소의 하단 여백 조정 */
-        }
-
-        /* 제목(h1)의 상단 여백 조정 */
-        h1 {
-            margin-top: 20px;
-        }
-
-        /* '사용해보기' 버튼 스타일 설정 */
-        #goToIndexButton {
-            margin-top: 20px; /* 버튼의 상단 여백 조정 */
-            font-size: 18px; /* 버튼의 글꼴 크기 조정 */
-        }
-    </style>
-</head>
-<body>
-
-    <!-- 페이지 제목 -->
-    <h1>우리들의 가치 있는 소통, 같이 수어</h1><p></p>
-
-    <!-- '같이 수어' 프로젝트 소개 멘트 -->
-    <p>하나의 언어로, 하나의 마음으로 소통하는 세상을 '같이 수어'는 꿈꿉니다.</p>
-    <p>'같이 수어'와 함께 대화의 폭을 넓혀보세요.</p>
-
-    <!-- 사용해보기 버튼 -->
-    <button id="goToIndexButton">사용해보기</button>
-
-    <!-- 버튼 클릭 시 다른 페이지로 이동하는 스크립트 -->
-    <script>
-        document.getElementById('goToIndexButton').addEventListener('click', function() {
-            window.location.href = 'start.html'; // 'start.html' 페이지로 이동
-        });
-    </script>
-
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>같이 수어</title>
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Archivo%3A400%2C500%2C700"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500%2C700%2C800"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=NanumSquare+Neo%3A400%2C700%2C800"
+        />
+        <link rel="stylesheet" href="./styles/landing-example-.css" />
+    </head>
+    <body>
+        <div class="landing-example--KnR">
+            <div class="hero-Gr5">
+                <img
+                    class="background-vector-dyT"
+                    src="./assets/background-vector.png"
+                />
+                <div class="hero-wireframe-desktop-18-8vD">
+                    <div class="auto-group-ckzf-ReR">
+                        <div class="auto-group-sbxw-wsf">
+                            <div class="text-3fo">
+                                <p class="item--Lwj">
+                                    <span class="item--Lwj-sub-0"
+                                        >우리들의 가치 있는 소통,
+                                    </span>
+                                    <span class="item--Lwj-sub-1">같이</span>
+                                    <span class="item--Lwj-sub-2"> </span>
+                                    <span class="item--Lwj-sub-3">수어</span>
+                                </p>
+                                <p class="item--Uc1">
+                                    한국어와 수화 두 언어의 장벽을 뛰어넘습니다.
+                                    하나의 언어로, 하나의 마음으로 소통하는
+                                    세상을 ‘같이 수어’는 꿈꿉니다. ‘같이 수어’와
+                                    함께 대화의 폭을 넓혀보세요.
+                                </p>
+                            </div>
+                            <div
+                                class="button-khw"
+                                onclick="location.href='start.html'"
+                            >
+                                시작해보기 &gt;
+                            </div>
+                        </div>
+                        <img
+                            class="icon-assistive-listening-systems-24-outline-Z9b"
+                            src="./assets/icon-assistive-listening-systems-24-outline.png"
+                        />
+                        <img
+                            class="icon-chat-24-outline-TVs"
+                            src="./assets/icon-chat-24-outline.png"
+                        />
+                        <img
+                            class="icon-winking-facewink-faceblinkhappysmileemojismile-squint-wink-alt-24-outline-Nsj"
+                            src="./assets/icon-winking-facewink-faceblinkhappysmileemojismile-squint-wink-alt-24-outline.png"
+                        />
+                    </div>
+                    <div class="screen-51T">
+                        <img class="image-Rr1" src="./assets/image.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document
+                .getElementById("goToIndexButton")
+                .addEventListener("click", function () {
+                    window.location.href = "start.html"; // 'start.html' 페이지로 이동
+                });
+        </script>
+    </body>
 </html>

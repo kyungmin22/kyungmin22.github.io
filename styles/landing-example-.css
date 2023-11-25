@@ -1,0 +1,882 @@
+
+html {
+	font-size:62.5%;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+input {
+	border: none;
+}
+body {
+  width: 144rem;
+}.landing-example--KnR {
+  box-sizing: border-box;
+  padding-bottom: 28.6rem;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #fbfcfd;
+}
+.landing-example--KnR .hero-Gr5 {
+  margin-bottom: 4rem;
+  width: 100%;
+  height: 85rem;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-Gr5 .background-vector-dyT {
+  width: 140.7999rem;
+  height: 85rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  object-fit: contain;
+  vertical-align: top;
+}
+.landing-example--KnR .hero-Gr5 .hero-wireframe-desktop-18-8vD {
+  width: 137rem;
+  height: 85rem;
+  position: absolute;
+  left: 7rem;
+  top: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.landing-example--KnR .hero-Gr5 .hero-wireframe-desktop-18-8vD .auto-group-ckzf-ReR {
+  width: 66.2rem;
+  height: 100%;
+  position: relative;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-Gr5 .hero-wireframe-desktop-18-8vD .auto-group-ckzf-ReR .auto-group-sbxw-wsf {
+  width: 52.5rem;
+  height: 37.7rem;
+  position: absolute;
+  left: 0;
+  top: 30.1rem;
+}
+.landing-example--KnR .hero-Gr5 .hero-wireframe-desktop-18-8vD .auto-group-ckzf-ReR .auto-group-sbxw-wsf .text-3fo {
+  margin-bottom: 6.3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.landing-example--KnR .hero-Gr5 .hero-wireframe-desktop-18-8vD .auto-group-ckzf-ReR .auto-group-sbxw-wsf .text-3fo .item--Lwj {
+  margin-bottom: 1.6rem;
+  max-width: 49.8rem;
+  font-size: 6.4rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #0c0e14;
+  font-family: Archivo, 'Source Sans Pro';
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-Gr5 .hero-wireframe-desktop-18-8vD .auto-group-ckzf-ReR .auto-group-sbxw-wsf .text-3fo .item--Lwj .item--Lwj-sub-0 {
+  font-size: 6.4rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #0c0e14;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+}
+.landing-example--KnR .hero-Gr5 .hero-wireframe-desktop-18-8vD .auto-group-ckzf-ReR .auto-group-sbxw-wsf .text-3fo .item--Lwj .item--Lwj-sub-1 {
+  font-size: 6.4rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #b794f4;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+}
+.landing-example--KnR .hero-Gr5 .hero-wireframe-desktop-18-8vD .auto-group-ckzf-ReR .auto-group-sbxw-wsf .text-3fo .item--Lwj .item--Lwj-sub-2 {
+  font-size: 6.4rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #0c0e14;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+}
+.landing-example--KnR .hero-Gr5 .hero-wireframe-desktop-18-8vD .auto-group-ckzf-ReR .auto-group-sbxw-wsf .text-3fo .item--Lwj .item--Lwj-sub-3 {
+  font-size: 6.4rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #b794f4;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+}
+.landing-example--KnR .hero-Gr5 .hero-wireframe-desktop-18-8vD .auto-group-ckzf-ReR .auto-group-sbxw-wsf .text-3fo .item--Uc1 {
+  max-width: 52.5rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.032rem;
+  color: rgba(0, 0, 0, 0.6000000238);
+  font-family: Archivo, 'Source Sans Pro';
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-Gr5 .hero-wireframe-desktop-18-8vD .auto-group-ckzf-ReR .auto-group-sbxw-wsf .button-khw {
+  width: 48.6rem;
+  height: 9rem;
+  overflow: hidden;
+  position: relative;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 0.6666666667;
+  letter-spacing: 0.06rem;
+  color: #fcf9ff;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 -0.1rem 0.4rem rgba(0, 0, 0, 0.1599999964));
+  background-color: #b794f4;
+  border-radius: 0.4rem;
+}
+.landing-example--KnR .hero-Gr5 .hero-wireframe-desktop-18-8vD .auto-group-ckzf-ReR .icon-assistive-listening-systems-24-outline-Z9b {
+  width: 7.0757rem;
+  height: 6.5899rem;
+  position: absolute;
+  left: 10.9rem;
+  top: 19.5rem;
+  object-fit: contain;
+  vertical-align: top;
+}
+.landing-example--KnR .hero-Gr5 .hero-wireframe-desktop-18-8vD .auto-group-ckzf-ReR .icon-chat-24-outline-TVs {
+  width: 5.4rem;
+  height: 5.5rem;
+  position: absolute;
+  left: 22.2rem;
+  top: 19.8rem;
+  object-fit: contain;
+  vertical-align: top;
+}
+.landing-example--KnR .hero-Gr5 .hero-wireframe-desktop-18-8vD .auto-group-ckzf-ReR .icon-winking-facewink-faceblinkhappysmileemojismile-squint-wink-alt-24-outline-Nsj {
+  width: 6.7rem;
+  height: 6.8rem;
+  position: absolute;
+  left: 0;
+  top: 19.4rem;
+  object-fit: contain;
+  vertical-align: top;
+}
+.landing-example--KnR .hero-Gr5 .hero-wireframe-desktop-18-8vD .screen-51T {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-Gr5 .hero-wireframe-desktop-18-8vD .screen-51T .image-Rr1 {
+  width: 70.8rem;
+  height: 85rem;
+  object-fit: cover;
+  vertical-align: top;
+  border-radius: 4rem 0 4rem 4rem;
+}
+.landing-example--KnR .hero-8VX {
+  margin-bottom: 4rem;
+  box-sizing: border-box;
+  padding: 39.1rem 51.5rem 9.8rem 51.4rem;
+  width: 100%;
+  height: 85rem;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-8VX .hero-wireframe-desktop-18-FKF {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  row-gap: 4.7rem;
+  display: flex;
+  flex-direction: column;
+}
+.landing-example--KnR .hero-8VX .hero-wireframe-desktop-18-FKF .button-acR {
+  margin-left: 0.1rem;
+  width: 41rem;
+  height: 8.9rem;
+  overflow: hidden;
+  position: relative;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 0.8333333333;
+  letter-spacing: 0.048rem;
+  color: #fcf9ff;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 -0.1rem 0.4rem rgba(0, 0, 0, 0.1599999964));
+  background-color: #b794f4;
+  border-radius: 0.4rem;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-8VX .hero-wireframe-desktop-18-FKF .button-acR .button-acR-sub-0 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 0.8333333333;
+  letter-spacing: 0.048rem;
+  color: #f3dda5;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+}
+.landing-example--KnR .hero-8VX .hero-wireframe-desktop-18-FKF .button-acR .button-acR-sub-1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 0.8333333333;
+  letter-spacing: 0.048rem;
+  color: #fcf9ff;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+}
+.landing-example--KnR .hero-8VX .hero-wireframe-desktop-18-FKF .button-Bkd {
+  width: 41rem;
+  height: 8.9rem;
+  overflow: hidden;
+  position: relative;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 0.8333333333;
+  letter-spacing: 0.048rem;
+  color: #fcf9ff;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 -0.1rem 0.4rem rgba(0, 0, 0, 0.1599999964));
+  background-color: #b794f4;
+  border-radius: 0.4rem;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-8VX .hero-wireframe-desktop-18-FKF .button-Bkd .button-Bkd-sub-0 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 0.8333333333;
+  letter-spacing: 0.048rem;
+  color: #f3dda5;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+}
+.landing-example--KnR .hero-8VX .hero-wireframe-desktop-18-FKF .button-Bkd .button-Bkd-sub-1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 0.8333333333;
+  letter-spacing: 0.048rem;
+  color: #ffffff;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+}
+.landing-example--KnR .hero-8VX .hero-wireframe-desktop-18-FKF .button-Bkd .button-Bkd-sub-2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 0.8333333333;
+  letter-spacing: 0.048rem;
+  color: #fcf9ff;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+}
+.landing-example--KnR .hero-8VX .hero-wireframe-desktop-18-FKF .button-hF7 {
+  width: 41rem;
+  height: 8.9rem;
+  overflow: hidden;
+  position: relative;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 0.8333333333;
+  letter-spacing: 0.048rem;
+  color: #fcf9ff;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 -0.1rem 0.4rem rgba(0, 0, 0, 0.1599999964));
+  background-color: #b794f4;
+  border-radius: 0.4rem;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-8VX .hero-wireframe-desktop-18-FKF .button-hF7 .button-hF7-sub-0 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 0.8333333333;
+  letter-spacing: 0.048rem;
+  color: #f3dda5;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+}
+.landing-example--KnR .hero-8VX .hero-wireframe-desktop-18-FKF .button-hF7 .button-hF7-sub-1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 0.8333333333;
+  letter-spacing: 0.048rem;
+  color: #ffffff;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+}
+.landing-example--KnR .hero-8VX .hero-wireframe-desktop-18-FKF .button-hF7 .button-hF7-sub-2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 0.8333333333;
+  letter-spacing: 0.048rem;
+  color: #fcf9ff;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+}
+.landing-example--KnR .hero-8VX .hero-wireframe-desktop-18-FKF .button-hF7 .button-hF7-sub-3 {
+}
+.landing-example--KnR .hero-8VX .hero-wireframe-desktop-18-FKF .button-hF7 .button-hF7-sub-4 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 0.8333333333;
+  letter-spacing: 0.048rem;
+  color: #fcf9ff;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+}
+.landing-example--KnR .hero-WEV {
+  margin-bottom: 4rem;
+  width: 100%;
+  height: 85rem;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-WEV .hero-wireframe-desktop-18-3kD {
+  width: 70.8rem;
+  height: 85rem;
+  position: absolute;
+  left: 73.2rem;
+  top: 0;
+  overflow: hidden;
+}
+.landing-example--KnR .hero-WEV .hero-wireframe-desktop-18-3kD .screen-A49 {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.landing-example--KnR .hero-WEV .hero-wireframe-desktop-19-KBw {
+  width: 144rem;
+  height: 85rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+.landing-example--KnR .hero-WEV .hero-wireframe-desktop-19-KBw .screen-dyK {
+  width: 70.8rem;
+  height: 85rem;
+  position: absolute;
+  left: 73.2rem;
+  top: 0;
+  overflow: hidden;
+}
+.landing-example--KnR .hero-WEV .hero-wireframe-desktop-19-KBw .hero-wireframe-desktop-18-mZj {
+  width: 70.8rem;
+  height: 85rem;
+  position: absolute;
+  left: 73.2rem;
+  top: 0;
+  overflow: hidden;
+}
+.landing-example--KnR .hero-WEV .hero-wireframe-desktop-19-KBw .hero-wireframe-desktop-18-mZj .screen-5qK {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.landing-example--KnR .hero-WEV .hero-wireframe-desktop-19-KBw .content-EiD {
+  box-sizing: border-box;
+  padding: 8.4rem 44.65rem 8rem 44.65rem;
+  width: 130rem;
+  height: 40rem;
+  position: absolute;
+  left: 7rem;
+  top: 8rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border: solid 0.1rem #a1aebf;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../assets/content-bg-BZ3.png');
+  border-radius: 0.4rem;
+}
+.landing-example--KnR .hero-WEV .hero-wireframe-desktop-19-KBw .content-EiD .icon-house-24-outline-6kR {
+  margin-bottom: 1.4336rem;
+  width: 4.1656rem;
+  height: 4.1664rem;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-WEV .hero-wireframe-desktop-19-KBw .content-EiD .block-content-2-16h {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-WEV .hero-wireframe-desktop-19-KBw .content-EiD .block-content-2-16h .text-ka5 {
+  margin: 0rem 4.4rem 3.2rem 4.4rem;
+  width: calc(100% - 8.8rem);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-WEV .hero-wireframe-desktop-19-KBw .content-EiD .block-content-2-16h .text-ka5 .item--FFw {
+  margin-bottom: 1.6rem;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #0c0e14;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-WEV .hero-wireframe-desktop-19-KBw .content-EiD .block-content-2-16h .text-ka5 .try-changing-the-text-to-sign-language-ifK {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.032rem;
+  color: rgba(0, 0, 0, 0.6000000238);
+  font-family: Archivo, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-WEV .hero-wireframe-desktop-19-KBw .content-EiD .block-content-2-16h .button-wrapper-horizontal-pCZ {
+  width: 100%;
+  height: 5.2rem;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-WEV .hero-wireframe-desktop-19-KBw .content-EiD .block-content-2-16h .button-wrapper-horizontal-pCZ .input-A1X {
+  margin-right: 1.6rem;
+  width: 32rem;
+  height: 100%;
+  border: solid 0.1rem #0c0e14;
+  box-sizing: border-box;
+  background-color: #fbfcfd;
+  border-radius: 0.4rem;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-WEV .hero-wireframe-desktop-19-KBw .content-EiD .block-content-2-16h .button-wrapper-horizontal-pCZ .input-A1X .content-hn9 {
+  box-sizing: border-box;
+  padding: 1.6rem 1.2rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 0.8rem;
+}
+.landing-example--KnR .hero-WEV .hero-wireframe-desktop-19-KBw .content-EiD .block-content-2-16h .button-wrapper-horizontal-pCZ .input-A1X .content-hn9 .left-part-E1P {
+  margin-right: 18.1rem;
+  width: 9.5rem;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.032rem;
+  color: #0c0e14;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-WEV .hero-wireframe-desktop-19-KBw .content-EiD .block-content-2-16h .button-wrapper-horizontal-pCZ .input-A1X .content-hn9 .right-part-J1F {
+  width: 2rem;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-WEV .hero-wireframe-desktop-19-KBw .content-EiD .block-content-2-16h .button-wrapper-horizontal-pCZ .button-zuf {
+  width: 7.1rem;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.032rem;
+  color: #fcf9ff;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 -0.1rem 0.4rem rgba(0, 0, 0, 0.1599999964));
+  background-color: #b794f4;
+  border-radius: 0.4rem;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-WEV .hero-wireframe-desktop-19-KBw .button-D1j {
+  box-sizing: border-box;
+  padding: 1.2rem;
+  width: 10rem;
+  height: 4.4rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  box-shadow: inset 0 -0.1rem 0.4rem rgba(0, 0, 0, 0.1599999964));
+  background-color: #b794f4;
+  border-radius: 0.4rem;
+}
+.landing-example--KnR .hero-WEV .hero-wireframe-desktop-19-KBw .button-D1j .master-button-M7w {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.landing-example--KnR .hero-WEV .hero-wireframe-desktop-19-KBw .button-D1j .master-button-M7w .home-Vjw {
+  margin-right: 0.6rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.032rem;
+  color: #fcf9ff;
+  font-family: Archivo, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-WEV .hero-wireframe-desktop-19-KBw .button-D1j .master-button-M7w .icon-r-b2H {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-desktop-15-5TF {
+  width: 100%;
+  height: 79.8rem;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-desktop-15-5TF .button-RX7 {
+  box-sizing: border-box;
+  padding: 1.2rem;
+  width: 10rem;
+  height: 4.4rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  box-shadow: inset 0 -0.1rem 0.4rem rgba(0, 0, 0, 0.1599999964));
+  background-color: #b794f4;
+  border-radius: 0.4rem;
+}
+.landing-example--KnR .hero-desktop-15-5TF .button-RX7 .master-button-ZNR {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.landing-example--KnR .hero-desktop-15-5TF .button-RX7 .master-button-ZNR .home-7eq {
+  margin-right: 0.6rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.032rem;
+  color: #fcf9ff;
+  font-family: Archivo, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-desktop-15-5TF .button-RX7 .master-button-ZNR .icon-r-32h {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-desktop-15-5TF .hero-wireframe-desktop-18-XiZ {
+  width: 137rem;
+  height: 85rem;
+  position: absolute;
+  left: 7rem;
+  top: 0;
+  overflow: hidden;
+}
+.landing-example--KnR .hero-desktop-15-5TF .hero-wireframe-desktop-18-XiZ .screen-eYH {
+  width: 70.8rem;
+  height: 85rem;
+  position: absolute;
+  left: 66.2rem;
+  top: 0;
+  overflow: hidden;
+}
+.landing-example--KnR .hero-desktop-15-5TF .hero-wireframe-desktop-18-XiZ .content-zMF {
+  box-sizing: border-box;
+  padding: 8.4rem 50.25rem 8rem 50.25rem;
+  width: 130rem;
+  height: 40rem;
+  position: absolute;
+  left: 0;
+  top: 11.8rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border: solid 0.1rem #a1aebf;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../assets/content-bg.png');
+  border-radius: 0.4rem;
+}
+.landing-example--KnR .hero-desktop-15-5TF .hero-wireframe-desktop-18-XiZ .content-zMF .icon-house-24-outline-4ru {
+  margin-bottom: 1.0336rem;
+  width: 4.1656rem;
+  height: 4.1664rem;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-desktop-15-5TF .hero-wireframe-desktop-18-XiZ .content-zMF .block-content-2-9dT {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-desktop-15-5TF .hero-wireframe-desktop-18-XiZ .content-zMF .block-content-2-9dT .text-u6q {
+  margin-bottom: 3.2rem;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-desktop-15-5TF .hero-wireframe-desktop-18-XiZ .content-zMF .block-content-2-9dT .text-u6q .item--r25 {
+  margin-bottom: 1.6rem;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #0c0e14;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-desktop-15-5TF .hero-wireframe-desktop-18-XiZ .content-zMF .block-content-2-9dT .text-u6q .try-changing-the-voice-to-sign-language-ipy {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.032rem;
+  color: rgba(0, 0, 0, 0.6000000238);
+  font-family: Archivo, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-desktop-15-5TF .hero-wireframe-desktop-18-XiZ .content-zMF .block-content-2-9dT .button-RUV {
+  margin: 0 8.9rem;
+  box-sizing: border-box;
+  padding: 1.6rem 2rem;
+  width: calc(100% - 17.8rem);
+  height: 5.6rem;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 -0.1rem 0.4rem rgba(0, 0, 0, 0.1599999964));
+  background-color: #b794f4;
+  border-radius: 0.4rem;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-desktop-15-5TF .hero-wireframe-desktop-18-XiZ .content-zMF .block-content-2-9dT .button-RUV .master-button-9QV {
+  box-sizing: border-box;
+  padding: 0.1rem 0.4rem 0.1rem 0rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.landing-example--KnR .hero-desktop-15-5TF .hero-wireframe-desktop-18-XiZ .content-zMF .block-content-2-9dT .button-RUV .master-button-9QV .item--53F {
+  margin-right: 2.2rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.032rem;
+  color: #fcf9ff;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-desktop-15-5TF .hero-wireframe-desktop-18-XiZ .content-zMF .block-content-2-9dT .button-RUV .master-button-9QV .icon-mic-24-outline-A4h {
+  width: 1.6rem;
+  height: 2.2rem;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-desktop-16-n65 {
+  width: 100%;
+  height: 79.8rem;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-desktop-16-n65 .button-SAd {
+  box-sizing: border-box;
+  padding: 1.2rem;
+  width: 10rem;
+  height: 4.4rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  box-shadow: inset 0 -0.1rem 0.4rem rgba(0, 0, 0, 0.1599999964));
+  background-color: #b794f4;
+  border-radius: 0.4rem;
+}
+.landing-example--KnR .hero-desktop-16-n65 .button-SAd .master-button-mTo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.landing-example--KnR .hero-desktop-16-n65 .button-SAd .master-button-mTo .home-KkD {
+  margin-right: 0.6rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.032rem;
+  color: #fcf9ff;
+  font-family: Archivo, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-desktop-16-n65 .button-SAd .master-button-mTo .icon-r-T5j {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-desktop-16-n65 .hero-wireframe-desktop-18-9jF {
+  width: 137rem;
+  height: 85rem;
+  position: absolute;
+  left: 7rem;
+  top: 0;
+  overflow: hidden;
+}
+.landing-example--KnR .hero-desktop-16-n65 .hero-wireframe-desktop-18-9jF .screen-HKf {
+  width: 70.8rem;
+  height: 85rem;
+  position: absolute;
+  left: 66.2rem;
+  top: 0;
+  overflow: hidden;
+}
+.landing-example--KnR .hero-desktop-16-n65 .hero-wireframe-desktop-18-9jF .content-q6H {
+  box-sizing: border-box;
+  padding: 8.4rem 49.05rem 8rem 49.05rem;
+  width: 130rem;
+  height: 40rem;
+  position: absolute;
+  left: 0;
+  top: 11.8rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border: solid 0.1rem #a1aebf;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../assets/content-bg-mxV.png');
+  border-radius: 0.4rem;
+}
+.landing-example--KnR .hero-desktop-16-n65 .hero-wireframe-desktop-18-9jF .content-q6H .icon-house-24-outline-LYq {
+  margin-bottom: 1.0336rem;
+  width: 4.1656rem;
+  height: 4.1664rem;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-desktop-16-n65 .hero-wireframe-desktop-18-9jF .content-q6H .block-content-2-sHs {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-desktop-16-n65 .hero-wireframe-desktop-18-9jF .content-q6H .block-content-2-sHs .text-E8R {
+  margin-bottom: 3.2rem;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-desktop-16-n65 .hero-wireframe-desktop-18-9jF .content-q6H .block-content-2-sHs .text-E8R .item--nQq {
+  margin-bottom: 1.6rem;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #0c0e14;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-desktop-16-n65 .hero-wireframe-desktop-18-9jF .content-q6H .block-content-2-sHs .text-E8R .try-to-recognize-sign-language-movements-UYZ {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.032rem;
+  color: rgba(0, 0, 0, 0.6000000238);
+  font-family: Archivo, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-desktop-16-n65 .hero-wireframe-desktop-18-9jF .content-q6H .block-content-2-sHs .button-a5o {
+  margin: 0 10.35rem;
+  box-sizing: border-box;
+  padding: 1.6rem 0rem 1.6rem 2.1rem;
+  width: calc(100% - 20.7rem);
+  height: 5.6rem;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 -0.1rem 0.4rem rgba(0, 0, 0, 0.1599999964));
+  background-color: #b794f4;
+  border-radius: 0.4rem;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-desktop-16-n65 .hero-wireframe-desktop-18-9jF .content-q6H .block-content-2-sHs .button-a5o .master-button-Hku {
+  box-sizing: border-box;
+  padding: 0.1rem 0.4rem 0.1rem 0rem;
+  width: 9.6rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.landing-example--KnR .hero-desktop-16-n65 .hero-wireframe-desktop-18-9jF .content-q6H .block-content-2-sHs .button-a5o .master-button-Hku .item--d45 {
+  margin-right: 3.6rem;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.032rem;
+  color: #fcf9ff;
+  font-family: NanumSquare Neo, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.landing-example--KnR .hero-desktop-16-n65 .hero-wireframe-desktop-18-9jF .content-q6H .block-content-2-sHs .button-a5o .master-button-Hku .icon-mic-24-outline-i5X {
+  width: 1.6rem;
+  height: 2.2rem;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+}

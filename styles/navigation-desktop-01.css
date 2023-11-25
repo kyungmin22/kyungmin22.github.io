@@ -1,0 +1,174 @@
+
+html {
+	font-size:62.5%;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+input {
+	border: none;
+}
+body {
+  width: 144rem;
+}.navigation-desktop-01-LFB {
+  box-sizing: border-box;
+  padding: 2.4rem 7rem;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: solid 0.1rem #e2e8ef;
+  background-color: #fbfcfd;
+}
+.navigation-desktop-01-LFB .logo-dk5 {
+  margin: 0rem 80.1rem 0.002rem 0rem;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.navigation-desktop-01-LFB .logo-dk5 .flash-xGZ {
+  margin-right: 1.5495rem;
+  width: 3.9505rem;
+  height: 3.9976rem;
+  position: relative;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+.navigation-desktop-01-LFB .logo-dk5 .item--Ukh {
+  margin-top: 0.0024rem;
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 0.8333333333;
+  letter-spacing: 0.048rem;
+  color: #000000;
+  font-family: Gmarket Sans TTF, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.navigation-desktop-01-LFB .links--xA5 {
+  margin-right: 1.6rem;
+  height: 4.4rem;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.navigation-desktop-01-LFB .links--xA5 .button-uUd {
+  box-sizing: border-box;
+  padding: 1.2rem;
+  width: 9.6rem;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0.8rem;
+  flex-shrink: 0;
+}
+.navigation-desktop-01-LFB .links--xA5 .button-uUd .master-button-qNH {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.navigation-desktop-01-LFB .links--xA5 .button-uUd .master-button-qNH .about-aKs {
+  margin-right: 0.6rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.032rem;
+  color: #000000;
+  font-family: Archivo, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.navigation-desktop-01-LFB .links--xA5 .button-uUd .master-button-qNH .icon-r-GTb {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+.navigation-desktop-01-LFB .links--xA5 .button-nwj {
+  width: 10.6rem;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.032rem;
+  color: #000000;
+  font-family: Archivo, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.8rem;
+  flex-shrink: 0;
+}
+.navigation-desktop-01-LFB .links--xA5 .button-4PT {
+  width: 8.4rem;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.032rem;
+  color: #000000;
+  font-family: Archivo, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.8rem;
+  flex-shrink: 0;
+}
+.navigation-desktop-01-LFB .buttons-Lrm {
+  width: 7.4rem;
+  height: 4.4rem;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+.navigation-desktop-01-LFB .buttons-Lrm .button-Hn1 {
+  box-sizing: border-box;
+  padding: 1.2rem;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 -0.1rem 0.4rem rgba(0, 0, 0, 0.1599999964));
+  background-color: #b794f4;
+  border-radius: 0.4rem;
+}
+.navigation-desktop-01-LFB .buttons-Lrm .button-Hn1 .master-button-qYd {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.navigation-desktop-01-LFB .buttons-Lrm .button-Hn1 .master-button-qYd .try-Pq3 {
+  margin-right: 0.6rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.032rem;
+  color: #fcf9ff;
+  font-family: Archivo, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.navigation-desktop-01-LFB .buttons-Lrm .button-Hn1 .master-button-qYd .icon-r-uHb {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+}
