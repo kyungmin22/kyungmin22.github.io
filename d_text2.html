@@ -148,215 +148,216 @@
     </div>
 
     <script>
-      // 비디오 파일 목록
-      var videoNames = [
-        "안녕하세요",
-        "안녕",
-        "감사합니다",
-        "고마워",
-        "고마워요",
-        "고맙습니다",
-        "기뻐",
-        "기뻐요",
-        "기쁩니다",
-        "더워",
-        "더워요",
-        "덥다",
-        "덥습니다",
-        "만나서 반가워",
-        "만나서 반갑다",
-        "만나서 반갑습니다",
-        "미안",
-        "미안하다",
-        "미안합니다",
-        "미안해",
-        "미안해요",
-        "배가 고픕니다",
-        "배고파",
-        "배고파요",
-        "배고프다",
-        "사랑합니다",
-        "사랑해",
-        "사랑해요",
-        "슬퍼",
-        "슬퍼요",
-        "슬프다",
-        "슬픕니다",
-        "싫다",
-        "싫습니다",
-        "싫어",
-        "싫어요",
-        "예뻐",
-        "예뻐요",
-        "예쁩니다",
-        "예쁘다",
-        "잠와",
-        "졸려",
-        "졸리다",
-        "졸립니다",
-        "좋다",
-        "좋습니다",
-        "좋아",
-        "좋아요",
-        "주세요",
-        "주십시오",
-        "줘",
-        "추워",
-        "춥다",
-        "춥습니다",
-        "추워요",
-        "하이",
-        "건강하세요",
-        "건강하십시오",
-        "또 만나",
-        "또 만나요",
-        "또 만납시다",
-        "또 언제 만날까요",
-        "또 언제 만납니까",
-        "밥 같이 먹어요",
-        "밥 같이 먹읍시다",
-        "밥 같이 먹자",
-        "밥 먹었나요",
-        "밥 먹었니",
-        "어떻게 지내",
-        "어떻게 지내세요",
-        "어떻게 지내십니까",
-        "잘 지내셨습니까",
-        "잘 지냈나요",
-        "잘 지냈니",
-        "힘들다",
-        "힘들어",
-        "힘들어요",
-        "힘듭니다",
-        "example1",
-        "example2",
-        "example3",
-        "example4",
-        "example5",
-        "example6",
-        "example7",
-        "example8",
-        "example9",
-        "example10",
-        "example11",
-        "example12",
-        "example13",
-        "example14",
-        "example15",
-        "example16",
-        "example17",
-        "example18",
-        "example19",
-        "example20",
-        "example21",
-        "example22",
-        "example23",
-        "example24",
-        "example25",
-        "example26",
-        "example27",
-        "example28",
-        "example29",
-        "example30",
-        "example31",
-        "example32",
-        "example33",
-        "example34",
-        "example35",
-        "example36",
-        "example37",
-        "example38",
-        "example39",
-        "example40",
-        "example41",
-        "example42",
-        "example43",
-        "example44",
-        "example45",
-        "example46",
-        "example47",
-        "example48",
-        "example49",
-        "example50",
-        "example51",
-        "example52",
-        "example53",
-        "example54",
-        "example55",
-        "example56",
-        "example57",
-        "example58",
-        "example59",
-        "example60",
-        "example61",
-        "example62",
-        "example63",
-        "example64",
-        "example65",
-        "example66",
-        "example67",
-        "example68",
-        "example69",
-        "example70",
-        "example71",
-        "example72",
-        "example73",
-        "example74",
-        "example75",
-        "example76",
-        "example77",
-        "example78",
-        "example79",
-        "example80",
-      ]; // 실제 비디오 파일 이름으로 수정
+            // 비디오 파일 목록
+            var videoNames = [
+              "안녕하세요",
+              "안녕",
+              "감사합니다",
+              "고마워",
+              "고마워요",
+              "고맙습니다",
+              "기뻐",
+              "기뻐요",
+              "기쁩니다",
+              "더워",
+              "더워요",
+              "덥다",
+              "덥습니다",
+              "만나서 반가워",
+              "만나서 반갑다",
+              "만나서 반갑습니다",
+              "미안",
+              "미안하다",
+              "미안합니다
+      ",
+              "미안해",
+              "미안해요",
+              "배가 고픕니다",
+              "배고파",
+              "배고파요",
+              "배고프다",
+              "사랑합니다",
+              "사랑해",
+              "사랑해요",
+              "슬퍼",
+              "슬퍼요",
+              "슬프다",
+              "슬픕니다",
+              "싫다",
+              "싫습니다",
+              "싫어",
+              "싫어요",
+              "예뻐",
+              "예뻐요",
+              "예쁩니다",
+              "예쁘다",
+              "잠와",
+              "졸려",
+              "졸리다",
+              "졸립니다",
+              "좋다",
+              "좋습니다",
+              "좋아",
+              "좋아요",
+              "주세요",
+              "주십시오",
+              "줘",
+              "추워",
+              "춥다",
+              "춥습니다",
+              "추워요",
+              "하이",
+              "건강하세요",
+              "건강하십시오",
+              "또 만나",
+              "또 만나요",
+              "또 만납시다",
+              "또 언제 만날까요",
+              "또 언제 만납니까",
+              "밥 같이 먹어요",
+              "밥 같이 먹읍시다",
+              "밥 같이 먹자",
+              "밥 먹었나요",
+              "밥 먹었니",
+              "어떻게 지내",
+              "어떻게 지내세요",
+              "어떻게 지내십니까",
+              "잘 지내셨습니까",
+              "잘 지냈나요",
+              "잘 지냈니",
+              "힘들다",
+              "힘들어",
+              "힘들어요",
+              "힘듭니다",
+              "example1",
+              "example2",
+              "example3",
+              "example4",
+              "example5",
+              "example6",
+              "example7",
+              "example8",
+              "example9",
+              "example10",
+              "example11",
+              "example12",
+              "example13",
+              "example14",
+              "example15",
+              "example16",
+              "example17",
+              "example18",
+              "example19",
+              "example20",
+              "example21",
+              "example22",
+              "example23",
+              "example24",
+              "example25",
+              "example26",
+              "example27",
+              "example28",
+              "example29",
+              "example30",
+              "example31",
+              "example32",
+              "example33",
+              "example34",
+              "example35",
+              "example36",
+              "example37",
+              "example38",
+              "example39",
+              "example40",
+              "example41",
+              "example42",
+              "example43",
+              "example44",
+              "example45",
+              "example46",
+              "example47",
+              "example48",
+              "example49",
+              "example50",
+              "example51",
+              "example52",
+              "example53",
+              "example54",
+              "example55",
+              "example56",
+              "example57",
+              "example58",
+              "example59",
+              "example60",
+              "example61",
+              "example62",
+              "example63",
+              "example64",
+              "example65",
+              "example66",
+              "example67",
+              "example68",
+              "example69",
+              "example70",
+              "example71",
+              "example72",
+              "example73",
+              "example74",
+              "example75",
+              "example76",
+              "example77",
+              "example78",
+              "example79",
+              "example80",
+            ]; // 실제 비디오 파일 이름으로 수정
 
-      function startSpeechRecognition() {
-        var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
-        var recognition = new SpeechRecognition();
+            function startSpeechRecognition() {
+              var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+              var recognition = new SpeechRecognition();
 
-        recognition.onresult = function (event) {
-          var transcript = event.results[0][0].transcript;
-          document.getElementById("speechRecognitionResult").textContent =
-            transcript;
-          playVideoBasedOnTranscript(transcript);
-        };
+              recognition.onresult = function (event) {
+                var transcript = event.results[0][0].transcript;
+                document.getElementById("speechRecognitionResult").textContent =
+                  transcript;
+                playVideoBasedOnTranscript(transcript);
+              };
 
-        recognition.start();
-      }
+              recognition.start();
+            }
 
-      function playVideoBasedOnTranscript(transcript) {
-        var videoPlayer = document.getElementById("signLanguageVideo");
-        var videoSource = document.getElementById("videoSource");
+            function playVideoBasedOnTranscript(transcript) {
+              var videoPlayer = document.getElementById("signLanguageVideo");
+              var videoSource = document.getElementById("videoSource");
 
-        // 입력된 텍스트가 비디오 목록에 있는지 확인
-        if (videoNames.includes(transcript)) {
-          videoSource.src = "수어 영상/" + transcript + ".mp4";
-          videoPlayer.load();
+              // 입력된 텍스트가 비디오 목록에 있는지 확인
+              if (videoNames.includes(transcript)) {
+                videoSource.src = "수어 영상/" + transcript + ".mp4";
+                videoPlayer.load();
 
-          videoPlayer.onloadeddata = function () {
-            videoPlayer.style.display = "block"; // 비디오 표시
-            videoPlayer.play();
-          };
+                videoPlayer.onloadeddata = function () {
+                  videoPlayer.style.display = "block"; // 비디오 표시
+                  videoPlayer.play();
+                };
 
-          videoPlayer.onerror = function () {
-            videoPlayer.style.display = "none"; // 오류 시 비디오 숨김
-            document.getElementById("speechRecognitionResult").textContent = ""; // 오류 시 텍스트 제거
-          };
+                videoPlayer.onerror = function () {
+                  videoPlayer.style.display = "none"; // 오류 시 비디오 숨김
+                  document.getElementById("speechRecognitionResult").textContent = ""; // 오류 시 텍스트 제거
+                };
 
-          videoPlayer.onended = function () {
-            videoPlayer.style.display = "none"; // 재생 종료 시 비디오 숨김
-            document.getElementById("speechRecognitionResult").textContent = ""; // 재생 종료 시 텍스트 제거
-          };
-        } else {
-          // 입력된 텍스트가 비디오 목록에 없으면 사용자 정의 팝업 표시
-          document.getElementById("customAlert").style.display = "block";
-        }
-      }
-      // 사용자 정의 팝업을 닫는 함수
-      function closeCustomAlert() {
-        document.getElementById("customAlert").style.display = "none";
-        document.getElementById("speechRecognitionResult").textContent = ""; // 음성 인식 결과 텍스트 제거
-      }
+                videoPlayer.onended = function () {
+                  videoPlayer.style.display = "none"; // 재생 종료 시 비디오 숨김
+                  document.getElementById("speechRecognitionResult").textContent = ""; // 재생 종료 시 텍스트 제거
+                };
+              } else {
+                // 입력된 텍스트가 비디오 목록에 없으면 사용자 정의 팝업 표시
+                document.getElementById("customAlert").style.display = "block";
+              }
+            }
+            // 사용자 정의 팝업을 닫는 함수
+            function closeCustomAlert() {
+              document.getElementById("customAlert").style.display = "none";
+              document.getElementById("speechRecognitionResult").textContent = ""; // 음성 인식 결과 텍스트 제거
+            }
     </script>
   </body>
 </html>
