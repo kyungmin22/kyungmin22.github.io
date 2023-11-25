@@ -273,14 +273,19 @@
         var recognition = new SpeechRecognition();
 
         recognition.onresult = function (event) {
-          var transcript = event.results[0][0].transcript;
+          var transcript = event.results[0][0].transcript.trim(); // 공백 제거
           document.getElementById("speechRecognitionResult").textContent =
             transcript;
 
-          // 2초 지연 후 비디오 재생 시작
-          setTimeout(function () {
-            playVideoBasedOnTranscript(transcript);
-          }, 2000); // 2초 지연
+          if (transcript) {
+            // 텍스트가 있을 경우, 2초 후 비디오 재생
+            setTimeout(function () {
+              playVideoBasedOnTranscript(transcript);
+            }, 2000);
+          } else {
+            // 텍스트가 없을 경우, 경고창 표시
+            alert("인식된 텍스트가 없습니다.");
+          }
         };
 
         recognition.start();
@@ -294,18 +299,19 @@
         videoPlayer.load();
 
         videoPlayer.onloadeddata = function () {
-          videoPlayer.style.display = "block"; // 비디오 표시
+          videoPlayer.style.display = "block";
           videoPlayer.play();
         };
 
         videoPlayer.onerror = function () {
-          videoPlayer.style.display = "none"; // 오류 시 비디오 숨김
-          document.getElementById("speechRecognitionResult").textContent = ""; // 오류 시 텍스트 제거
+          videoPlayer.style.display = "none";
+          document.getElementById("speechRecognitionResult").textContent = "";
+          alert("동영상이 없습니다.");
         };
 
         videoPlayer.onended = function () {
-          videoPlayer.style.display = "none"; // 재생 종료 시 비디오 숨김
-          document.getElementById("speechRecognitionResult").textContent = ""; // 재생 종료 시 텍스트 제거
+          videoPlayer.style.display = "none";
+          document.getElementById("speechRecognitionResult").textContent = "";
         };
       }
     </script>
