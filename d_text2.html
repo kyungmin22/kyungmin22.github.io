@@ -101,26 +101,28 @@
       }
 
       function startSpeechRecognition() {
-        var recognition = new webkitSpeechRecognition();
-        recognition.lang = "ko-KR"; // 한국어로 설정
+        var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+        var recognition = new SpeechRecognition();
+
         recognition.onresult = function (event) {
-          var text = event.results[0][0].transcript; // 인식된 텍스트 추출
-          document.getElementById("recognizedText").innerText = text; // 텍스트 표시
-          // 비디오 재생을 2초 뒤에 시작
-          setTimeout(function () {
-            playVideoBasedOnText(text);
-          }, 2000);
+          var transcript = event.results[0][0].transcript;
+          document.getElementById("speechRecognitionResult").textContent =
+            transcript;
+
+          // 비디오 파일 경로 생성 및 재생
+          playVideoBasedOnTranscript(transcript);
         };
-        recognition.start(); // 음성 인식 시작
+
+        recognition.start();
       }
 
-      // 텍스트에 따른 비디오 재생 함수
-      function playVideoBasedOnText(text) {
-        var videoPlayer = document.getElementById("signLanguageVideo");
+      function playVideoBasedOnTranscript(transcript) {
+        var videoPlayer = document.getElementById("videoPlayer");
         var videoSource = document.getElementById("videoSource");
 
-        // 비디오 소스 경로 업데이트
-        videoSource.src = "수어 영상/" + text + ".mp4"; // '수어 영상' 폴더 안의 동영상을 참조
+        // 비디오 소스 경로 업데이트 - '수어 영상' 폴더 내의 동영상을 참조
+        videoSource.src = "수어 영상/" + transcript + ".mp4";
+
         videoPlayer.load();
 
         // 비디오 로드 에러 처리
@@ -133,12 +135,11 @@
         videoPlayer.onloadeddata = function () {
           videoPlayer.style.display = "block";
           videoPlayer.play();
-          document.getElementById("recognizedText").innerText = ""; // 비디오 시작 후 텍스트 초기화
         };
 
-        // 비디오 종료 시 처리
+        // 비디오 재생 종료 시 처리
         videoPlayer.onended = function () {
-          videoPlayer.style.display = "none"; // 비디오 종료 후 플레이어 숨김
+          videoPlayer.style.display = "none";
         };
       }
     </script>
