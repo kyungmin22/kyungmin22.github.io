@@ -60,20 +60,40 @@
         </div>
         <div class="auto-group-djey-hLZ">
           <div class="header-39X"></div>
-          <p class="item--gtd">음성인식중입니다... *_*</p>
-          <!-- 기존 텍스트 -->
-
-          <!-- 음성 인식 결과를 표시할 새로운 요소 -->
-          <div
-            id="speechRecognitionResult"
-            style="
-              font-size: 20px;
-              color: #000;
-              margin-top: 20px; /* 위 요소와의 간격 */
-              text-align: center;
-            "
-          >
+          <!-- 음성 인식 결과를 표시할 요소, 수정된 스타일 적용 -->
+          <div id="speechRecognitionResult" style="
+            position: absolute; 
+            top: 10%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+            z-index: 2; 
+            font-size: 20px; /* 글씨 크기 증가 */
+            color: #000; /* 글씨 색상 설정, 필요에 따라 변경 가능 */
+            max-width: 80%; /* 상자의 최대 너비 */
+            text-align: center; /* 텍스트 중앙 정렬 */
+          ">
             <!-- 음성 인식 결과가 여기에 표시됩니다 -->
+          </div>
+          <!-- 기타 내용 ... -->
+        </div>
+        
+        <!-- 음성 인식 스크립트 -->
+        <script>
+          // 음성 인식을 시작하는 함수
+          function startSpeechRecognition() {
+            var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+            var recognition = new SpeechRecognition();
+        
+            recognition.onresult = function(event) {
+              var transcript = event.results[0][0].transcript; // 인식된 텍스트
+              // 음성 인식 결과를 표시할 요소에 텍스트 설정
+              document.getElementById('speechRecognitionResult').textContent = transcript;
+            };
+        
+            recognition.start();
+          }
+        </script>
+        
           </div>
           <p class="item--gtd">음성인식중입니다... *_*</p>
           <div class="item--9GR"></div>
@@ -83,22 +103,22 @@
     <script>
       // 음성 인식을 시작하는 함수
       function startSpeechRecognition() {
-        var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
-        var recognition = new SpeechRecognition();
+  var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+  var recognition = new SpeechRecognition();
 
-        recognition.onresult = function (event) {
-          var transcript = event.results[0][0].transcript;
-          console.log("인식된 텍스트: " + transcript); // 인식된 텍스트를 콘솔에 출력
-          document.getElementById("speechRecognitionResult").textContent =
-            transcript;
-        };
+  recognition.onresult = function(event) {
+    var transcript = event.results[0][0].transcript;
+    console.log("인식된 텍스트: " + transcript); // 인식된 텍스트를 콘솔에 출력
+    document.getElementById('speechRecognitionResult').textContent = transcript;
+  };
 
-        recognition.onerror = function (event) {
-          console.error("음성 인식 에러:", event.error); // 인식 중 에러 발생 시 콘솔에 출력
-        };
+  recognition.onerror = function(event) {
+    console.error("음성 인식 에러:", event.error); // 인식 중 에러 발생 시 콘솔에 출력
+  };
 
-        recognition.start();
-      }
+  recognition.start();
+}
+
     </script>
   </body>
 </html>
