@@ -75,14 +75,42 @@
               text-align: center; /* 텍스트 중앙 정렬 */
             "
           >
-            <!-- 글자 두껍게 및 크기 조정 -->
-            <p style="font-size: 18px; font-weight: bold">
-              수어 영상이 존재하지 않습니다.
-            </p>
-            <button onclick="closeCustomAlert()" style=" margin-top: 20px;
-            background-color: #d6bfd2; /* 연보라색 HEX 코드 */ color: white;
-            border: none; padding: 10px 20px; border-radius: 20px; cursor:
-            pointer; font-weight: bold; /* 글자 두껍게 */
+            <!-- 팝업창 구조 -->
+            <div
+              id="customAlert"
+              style="
+                display: none;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                text-align: center;
+              "
+            >
+              <p style="font-size: 18px; font-weight: bold">
+                수어 영상이 존재하지 않습니다.
+              </p>
+              <button
+                onclick="closeCustomAlert()"
+                style="
+                  margin-top: 20px;
+                  background-color: #d6bfd2;
+                  color: white;
+                  border: none;
+                  padding: 10px 20px;
+                  border-radius: 20px;
+                  cursor: pointer;
+                  font-weight: bold;
+                "
+              >
+                OK
+              </button>
+            </div>
+
             <!-- 음성 인식 결과가 여기에 표시됩니다 -->
           </div>
           <!-- 음성 인식 결과를 표시할 요소 -->
@@ -302,19 +330,21 @@
         videoPlayer.load();
 
         videoPlayer.onloadeddata = function () {
-          videoPlayer.style.display = "block"; // 비디오 표시
+          videoPlayer.style.display = "block";
           videoPlayer.play();
         };
 
         videoPlayer.onerror = function () {
-          videoPlayer.style.display = "none"; // 오류 시 비디오 숨김
-          document.getElementById("speechRecognitionResult").textContent = ""; // 오류 시 텍스트 제거
+          showCustomAlert(); // 비디오 로드 실패 시 팝업창 표시
         };
+      }
 
-        videoPlayer.onended = function () {
-          videoPlayer.style.display = "none"; // 재생 종료 시 비디오 숨김
-          document.getElementById("speechRecognitionResult").textContent = ""; // 재생 종료 시 텍스트 제거
-        };
+      function showCustomAlert() {
+        document.getElementById("customAlert").style.display = "block";
+      }
+
+      function closeCustomAlert() {
+        document.getElementById("customAlert").style.display = "none";
       }
     </script>
   </body>
