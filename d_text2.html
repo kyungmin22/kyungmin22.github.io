@@ -89,13 +89,28 @@
         var recognition = new SpeechRecognition();
 
         recognition.onresult = function (event) {
-          var transcript = event.results[0][0].transcript; // 인식된 텍스트
-          // 음성 인식 결과를 표시할 요소에 텍스트 설정
+          var transcript = event.results[0][0].transcript;
           document.getElementById("speechRecognitionResult").textContent =
             transcript;
+
+          // 비디오 파일 경로 생성 및 재생
+          playVideoBasedOnTranscript(transcript);
         };
 
         recognition.start();
+      }
+
+      function playVideoBasedOnTranscript(transcript) {
+        var videoPlayer = document.getElementById("videoPlayer");
+        var videoSource = document.getElementById("videoSource");
+
+        // 영상 파일 경로 설정 예시: "videos/" 폴더 내의 파일
+        // 파일 명명 규칙에 따라 경로를 조정해야 합니다.
+        videoSource.src = "videos/" + transcript + ".mp4";
+
+        videoPlayer.load();
+        videoPlayer.style.display = "block";
+        videoPlayer.play();
       }
     </script>
   </body>
