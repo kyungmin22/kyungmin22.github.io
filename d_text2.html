@@ -309,7 +309,7 @@
       function startSpeechRecognition() {
         var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
         var recognition = new SpeechRecognition();
-
+        recognition.lang = "ko-KR"; // 한국어로 설정
         recognition.onresult = function (event) {
           var transcript = event.results[0][0].transcript;
           document.getElementById("speechRecognitionResult").textContent =
