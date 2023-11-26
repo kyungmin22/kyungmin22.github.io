@@ -44,7 +44,7 @@
           </div>
         </div>
       </div>
-      <div class="hero-mXT" style="position: relative; top: 50px">
+      <div class="hero-mXT">
         <p class="item--gPX">음성을 수어로</p>
         <p class="try-changing-the-voice-to-sign-language-Ygd">
           Try changing the voice to sign language
@@ -114,11 +114,9 @@
         text-align: center;
         display: none;
         position: absolute;
-        top: calc(
-          75% + 50px
-        ); /* 수어 비디오 아래에서 더 아래로 위치하도록 설정 */
+        top: 50px; /* 아래로 이동할 값 (음수 사용 가능) */
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, -50%);
         z-index: 1;
         width: 300px;
         background-color: rgb(255, 255, 255);
