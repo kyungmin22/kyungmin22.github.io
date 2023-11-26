@@ -60,6 +60,42 @@
         </div>
         <div class="auto-group-djey-hLZ">
           <div class="header-39X"></div>
+          <div
+            id="customAlert"
+            style="
+              text-align: center;
+              display: none;
+              position: absolute;
+              top: 50%; /* 적절한 위치로 조절하세요. */
+              left: 50%;
+              transform: translate(-50%, -50%);
+              z-index: 1;
+              width: 300px;
+              background-color: rgb(255, 255, 255);
+              padding: 20px;
+              box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.374);
+            "
+          >
+            <!-- 글자 두껍게 및 크기 조정 -->
+            <p style="font-size: 18px; font-weight: bold">
+              수어 영상이 존재하지 않습니다.
+            </p>
+            <button
+              onclick="closeCustomAlert()"
+              style="
+                margin-top: 20px;
+                background-color: #d6bfd2; /* 연보라색 HEX 코드 */
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 20px;
+                cursor: pointer;
+                font-weight: bold; /* 글자 두껍게 */
+              "
+            >
+              OK
+            </button>
+          </div>
           <!-- 음성 인식 결과를 표시할 요소, 수정된 스타일 적용 -->
           <div
             id="speechRecognitionResult"
@@ -107,43 +143,6 @@
       </div>
     </div>
 
-    <!-- 사용자 정의 팝업 -->
-    <div
-      id="customAlert"
-      style="
-        text-align: center;
-        display: none;
-        position: absolute;
-        top: 70%; /* 적절한 위치로 조절하세요. */
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-        width: 300px;
-        background-color: rgb(255, 255, 255);
-        padding: 20px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.374);
-      "
-    >
-      <!-- 글자 두껍게 및 크기 조정 -->
-      <p style="font-size: 18px; font-weight: bold">
-        수어 영상이 존재하지 않습니다.
-      </p>
-      <button
-        onclick="closeCustomAlert()"
-        style="
-          margin-top: 20px;
-          background-color: #d6bfd2; /* 연보라색 HEX 코드 */
-          color: white;
-          border: none;
-          padding: 10px 20px;
-          border-radius: 20px;
-          cursor: pointer;
-          font-weight: bold; /* 글자 두껍게 */
-        "
-      >
-        OK
-      </button>
-    </div>
     <script>
       // 비디오 파일 목록
       var videoNames = [
