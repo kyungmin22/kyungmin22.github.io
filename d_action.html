@@ -60,17 +60,106 @@
             </div>
           </div>
         </div>
-        <div class="auto-group-3qq3-Z6m">
+       <div class="auto-group-3qq3-Z6m">
           <div class="header-JKF"></div>
-          <div class="badge-poP">
+
+          <div> Teachable Machine Pose Model</div> 
+          <div><canvas id="canvas"></canvas></div>
+          <div id="label-container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
+    <script type="text/javascript">
+
+          // 모델 URL 설정
+          const URL = "./my_model/";
+      let model, webcam, ctx, labelContainer, maxPredictions;
+
+      // 초기화 함수
+      async function init() {
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+
+        // 기존에 초기화된 모델 및 웹캠이 있다면 정지하고 삭제
+        if (model) {
+          await model.stop();
+        }
+        if (webcam) {
+          webcam.stop();
+        }
+
+        // 새로운 모델 및 웹캠 초기화
+        model = await tmPose.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
+
+        const size = 200; // 웹캠 크기 설정
+        const flip = true; // 이미지 반전 설정
+        webcam = new tmPose.Webcam(size, size, flip);
+        await webcam.setup();
+        await webcam.play();
+        window.requestAnimationFrame(loop);
+
+        // 캔버스 설정
+        const canvas = document.getElementById("canvas");
+        canvas.width = size;
+        canvas.height = size;
+        ctx = canvas.getContext("2d");
+        labelContainer = document.getElementById("label-container");
+        for (let i = 0; i < maxPredictions; i++) {
+          labelContainer.appendChild(document.createElement("div"));
+        }
+      }
+
+      // 루프 함수: 웹캠 업데이트 및 예측 함수 호출
+      async function loop(timestamp) {
+        webcam.update();
+        await predict();
+        window.requestAnimationFrame(loop);
+      }
+
+      // 예측 함수: 포즈 추정 및 클래스 예측
+      async function predict() {
+        const { pose, posenetOutput } = await model.estimatePose(webcam.canvas);
+        const prediction = await model.predict(posenetOutput);
+
+        // 가장 높은 확률을 가진 클래스 찾기
+        let maxIndex = 0;
+        for (let i = 1; i < maxPredictions; i++) {
+          if (prediction[i].probability > prediction[maxIndex].probability) {
+            maxIndex = i;
+          }
+        }
+
+        const classPrediction = prediction[maxIndex].className;
+        labelContainer.innerHTML = classPrediction; // 결과 표시
+
+        drawPose(pose); // 포즈 그리기
+      }
+
+      // 포즈 그리는 함수
+      function drawPose(pose) {
+        if (webcam.canvas) {
+          ctx.drawImage(webcam.canvas, 0, 0);
+          if (pose) {
+            const minPartConfidence = 0.5; // 최소 신뢰도 설정
+            tmPose.drawKeypoints(pose.keypoints, minPartConfidence, ctx);
+            tmPose.drawSkeleton(pose.keypoints, minPartConfidence, ctx);
+          }
+        }
+      }   
+          
+       <div class="badge-poP">
             <div class="master-badge-8p5">
-              <img class="icon-l-5UR" src="./assets/icon-l.png" />
+              <img class="icon-l-5UR"
+               src="./assets/icon-l.png" />
               <p class="badge-ovD">Ok</p>
+              <div class="badge-ovD" onclick= "location.href='d_start.html">
+                HOME
             </div>
           </div>
+
           <div class="badge-hVo">
             <div class="master-badge-p4d">
-              <div class="auto-group-prkf-aJh">음성으로 듣기</div>
+              <div class="auto-group-prkf-aJh">음성으로 듣기</div>  
             </div>
           </div>
         </div>
