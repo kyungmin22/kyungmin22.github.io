@@ -45,33 +45,45 @@
       <div class="hero-p77" style="position: relative">
         <div class="block-content-2-kFf">
           <div class="text-sLH">
-            <p class="item--CtM">텍스트를 수어로</p>
+            <p class="item--CtM" style="margin-left: -80px">
+              텍스트를 수어로 바꾸기
+            </p>
             <p class="try-changing-the-text-to-sign-language-V6m">
               Try changing the text to sign language
             </p>
           </div>
           <div class="button-wrapper-horizontal-PC9">
             <div class="input-8fX">
-              <div class="content-CvH">
-                <!-- 텍스트 입력 컨테이너와 확인 버튼 -->
-                <div id="inputContainer">
-                  <label for="textInput"></label>
-                  <input
-                    type="text"
-                    id="textInput"
-                    placeholder="여기에 입력하세요"
-                    oninput="showSuggestions(this.value)"
-                    style="
-                      width: 320px;
-                      height: 50px;
-                      font-size: 16px;
-                      border: 1.7px solid black;
-                    "
-                  />
-                </div>
-                <div class="left-part-M2V"></div>
-                <div class="right-part-SJq"></div>
+              <!-- 텍스트 입력 컨테이너와 확인 버튼 -->
+              <div id="inputContainer">
+                <label for="textInput"></label>
+                <input
+                  type="text"
+                  id="textInput"
+                  placeholder="여기에 텍스트를 입력하세요."
+                  oninput="showSuggestions(this.value)"
+                  style="
+                    width: 320px;
+                    height: 50px;
+                    font-size: 18px;
+                    border: 1.7px solid black;
+                    border-radius: 5px; /* 테두리를 둥글게 만드는 속성 추가 */
+                  "
+                />
+                <div
+                  id="suggestions"
+                  style="
+                    font-size: 19px;
+                    position: absolute;
+                    background: white;
+                    width: 320px;
+                    z-index: 1000; /* z-index 값을 추가 */
+                    border-radius: 10px; /* 테두리를 둥글게 만드는 속성 추가 */
+                  "
+                ></div>
               </div>
+              <div class="left-part-M2V"></div>
+              <div class="right-part-SJq"></div>
             </div>
             <div class="button-Ycm" onclick="playVideo()">확인</div>
 
@@ -276,6 +288,7 @@
             ]; // 배열은 기존대로 유지
 
             // 사용자 입력에 따라 자동 완성 제안을 표시하는 함수
+
             function showSuggestions(value) {
               var suggestions = document.getElementById("suggestions");
               suggestions.innerHTML = "";
@@ -349,10 +362,6 @@
         <div class="auto-group-ktsb-c6q">
           <div class="header-weu" style="position: relative"></div>
 
-          <div class="content-M6M">
-            <div class="left-part-2iH">Search... -.-</div>
-            <img class="right-part-iLD" src="./assets/right-part.png" />
-          </div>
           <div class="item--EJZ">
             <video
               id="videoPlayer"
