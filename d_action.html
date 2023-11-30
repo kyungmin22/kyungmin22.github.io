@@ -29,8 +29,8 @@
     <link rel="stylesheet" href="./styles/-WxV.css" />
     <style>
       #canvas {
-        margin-top: 120px;
-        margin-left: 300px;
+        margin-top: 100px;
+        margin-left: 320px;
       }
     </style>
   </head>
@@ -104,7 +104,7 @@
         model = await tmPose.load(modelURL, metadataURL);
         maxPredictions = model.getTotalClasses();
 
-        const size = 200; // 웹캠 크기 설정
+        const size = 300; // 웹캠 크기 설정
         const flip = true; // 이미지 반전 설정
         webcam = new tmPose.Webcam(size, size, flip);
         await webcam.setup();
