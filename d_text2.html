@@ -341,7 +341,8 @@
 
         // 입력된 텍스트가 비디오 목록에 있는지 확인
         if (videoNames.includes(transcript)) {
-          videoSource.src = "수어 영상/" + transcript + ".mp4";
+          videoSource.src =
+            "수어 영상/" + transcript.replace(/[^\w\s]/gi, "") + ".mp4";
           videoPlayer.load();
 
           videoPlayer.onloadeddata = function () {
