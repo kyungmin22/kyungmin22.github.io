@@ -41,8 +41,7 @@
       }
 
       .custom-button {
-        display: block;
-        margin: -190px auto 0;
+        display: inline-block;
         padding: 10px 20px;
         background-color: transparent;
         border: 2px solid rgb(154, 53, 232);
@@ -51,6 +50,17 @@
         transition: background-color 0.3s, color 0.3s;
         white-space: nowrap;
         border-radius: 20px; /* 타원형 모양을 위한 둥근 모서리 추가 */
+      }
+
+      .auto-group-3qq3-Z6m {
+        position: relative; /* 상위 컨테이너에 대한 위치 지정 */
+      }
+
+      .button-container {
+        position: absolute; /* 버튼을 상위 컨테이너에 상대적으로 위치 */
+        bottom: 105%; /* 하단에서 10% 위치 */
+        left: 35%; /* 좌측에서 50% 위치 */
+        transform: translateX(-50%); /* X축을 기준으로 중앙 정렬 */
       }
 
       .custom-button:hover {
@@ -96,6 +106,9 @@
           <div class="header-JKF">
             <div><canvas id="canvas"></canvas></div>
             <div id="label-container"></div>
+          </div>
+          <div class="button-container">
+            <!-- 버튼을 위한 새로운 컨테이너 -->
             <button
               type="button"
               class="custom-button"
