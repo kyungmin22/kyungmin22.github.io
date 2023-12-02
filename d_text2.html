@@ -72,6 +72,17 @@
             />
           </div>
         </button>
+        <p
+          id="recognitionStatus"
+          style="
+            display: none;
+            font-size: 20px;
+            margin-top: -30px;
+            font-weight: bold;
+          "
+        >
+          음성인식 중입니다
+        </p>
 
         <div class="auto-group-djey-hLZ">
           <div class="header-39X"></div>
@@ -325,11 +336,17 @@
         var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
         var recognition = new SpeechRecognition();
         recognition.lang = "ko-KR"; // 한국어로 설정
+
+        // 음성 인식 시작 시 텍스트 표시
+        document.getElementById("recognitionStatus").style.display = "block";
         recognition.onresult = function (event) {
           var transcript = event.results[0][0].transcript;
           document.getElementById("speechRecognitionResult").textContent =
             transcript;
           playVideoBasedOnTranscript(transcript);
+
+          // 음성 인식 결과가 나타나면 상태 텍스트 숨김
+          document.getElementById("recognitionStatus").style.display = "none";
         };
 
         recognition.start();
